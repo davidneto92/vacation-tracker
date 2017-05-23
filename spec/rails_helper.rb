@@ -26,7 +26,36 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+OmniAuth.config.test_mode = true
+
+OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+  provider: "google_oauth2",
+  uid: "#{rand(100000000000000000000..110000000000000000000)}",
+  info: {
+    name: "Test Name"
+  },
+  credentials: {
+    token: "token",
+    expires_at: (Time.now + 600)
+  }
+})
+
+
 RSpec.configure do |config|
+
+
+  # Databse Cleaning block to remove entries after each feature test
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -61,4 +90,3 @@ require "valid_attribute"
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 end
-
