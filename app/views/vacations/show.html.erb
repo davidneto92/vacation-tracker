@@ -1,0 +1,6 @@
+<h1><%= @vacation.name %></h1>
+<h3>By: <%= @vacation.user.name %></h3>
+<ul>
+  <li>Location: <%= @vacation.location %></li>
+  <li>Vacation dates: <%= @vacation.start_date.strftime "%B %e" %> - <%= @vacation.end_date.strftime "%e, %Y" %></li>
+</ul>
