@@ -6,10 +6,14 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'omniauth-google-oauth2'
+gem 'figaro'
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console'
 end
 
 group :development, :test do
@@ -20,6 +24,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'database_cleaner'
 end
 
 group :production do
