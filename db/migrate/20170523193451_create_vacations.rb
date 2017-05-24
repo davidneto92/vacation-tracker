@@ -4,7 +4,7 @@ class CreateVacations < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.string :location, null: false
       t.text :description
-      t.boolean :public, null: false
+      t.boolean :display_public, null: false
       t.date :start_date, null: false
       t.date :end_date, null: false
 

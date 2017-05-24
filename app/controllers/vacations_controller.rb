@@ -1,4 +1,11 @@
 class VacationsController < ApplicationController
+  before_action :authorize_sign_in, except: [:show, :index]
+  before_action :authorize_view_permission, only: [:show]
+  before_action :authorize_management, only: [:edit, :update, :destroy]
+
+  def index
+    @vacations = Vacation.where(display_public: true)
+  end
 
   def show
     @vacation = Vacation.where(id: params[:id]).first
@@ -22,23 +29,56 @@ class VacationsController < ApplicationController
     end
   end
 
+  def edit
+    @vacation = Vacation.where(id: params[:id]).first
+    @public_choice = [true, false]
+  end
+
+  def update
+    @vacation = Vacation.find(params[:id])
+    @vacation.update(vacation_params)
+    @vacation.user_id = current_user.id
+
+    if @vacation.save
+      flash[:notice] = "Vacation has been updated."
+      redirect_to vacation_path(@vacation)
+    else
+      flash[:alert] = "Update failed."
+      render :edit
+    end
+  end
+
+  def destroy
+    @vacation = Vacation.find(params[:id])
+    @vacation.destroy
+    redirect_to vacations_path
+  end
+
 
   private
 
   def vacation_params
-    params[:vacation][:public] = (params[:vacation][:public] == "true")
-    # ^ converts string from form into a boolean
     params.require(:vacation).permit(
-      :name, :location, :description, :start_date, :end_date, :public
+      :name, :location, :description, :start_date, :end_date, :display_public
     )
   end
 
-end
+  def authorize_sign_in
+    if current_user.nil?
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    end
+  end
 
-# <div class="row">
-#   <%= f.label :public, "public" %>
-#   <%= f.collection_radio_buttons :public, @public_choice, :first, :last do |b| %>
-#       <%= b.radio_button %>
-#       <%= b.label %>
-#   <% end %>
-# </div>
+  def authorize_view_permission
+    if !(current_user == Vacation.find(params[:id]).user) && (Vacation.find(params[:id]).display_public == false)
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    end
+  end
+
+  def authorize_management
+    if !(current_user && current_user.vacations.include?(Vacation.find(params[:id])))
+      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+    end
+  end
+
+end

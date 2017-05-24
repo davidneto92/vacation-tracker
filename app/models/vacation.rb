@@ -3,7 +3,8 @@ class Vacation < ApplicationRecord
   belongs_to :user
 
   validates :name, :location, :start_date, :end_date, presence: true
-  validates :public, inclusion: { in: [true, false], message: "NOPE!" } 
+  validates :name, length: { minimum: 5 }
+  validates :display_public, inclusion: { in: [true, false], message: "- please select if this vacation should be publicly viewable" }
   validate :vacation_has_happened
   validate :dates_acceptable
 
