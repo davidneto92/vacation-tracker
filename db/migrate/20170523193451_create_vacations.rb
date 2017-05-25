@@ -3,7 +3,7 @@ class CreateVacations < ActiveRecord::Migration[5.0]
     create_table :vacations do |t|
       t.string :name, null: false
       t.string :location, null: false
-      t.text :description
+      t.text :description, default: nil
       t.boolean :display_public, null: false
       t.date :start_date, null: false
       t.date :end_date, null: false

@@ -1,7 +1,8 @@
 <h1><%= @vacation.name %></h1>
 
 <% if current_user == @vacation.user %>
-  <%= link_to "Edit this Vacation", edit_vacation_path(@vacation) %>
+  <%= link_to "Edit this Vacation", edit_vacation_path(@vacation) %> <br>
+  <%= link_to "Add a Visit", new_vacation_visit_path(@vacation) %>
 <% end %>
 
 <h3>By:
@@ -15,5 +16,13 @@
 <ul>
   <li>Location: <%= @vacation.location %></li>
   <li>Vacation dates: <%= @vacation.start_date.strftime "%B %e" %> - <%= @vacation.end_date.strftime "%e, %Y" %></li>
-  <li>Description: <%= @vacation.description %></li>
+  <% if @vacation.description != nil %>
+    <li>Description: <%= @vacation.description %></li>
+  <% end %>
+  <li>Visits:
+    <ul>
+      <% @visits.each do |visit| %>
+        <li><%= "#{visit.park.full_name}, from #{visit.text_dates}" %></li>
+      <% end %>
+    </ul>
 </ul>

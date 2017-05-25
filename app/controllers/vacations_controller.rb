@@ -9,6 +9,7 @@ class VacationsController < ApplicationController
 
   def show
     @vacation = Vacation.where(id: params[:id]).first
+    @visits = @vacation.visits
   end
 
   def new
