@@ -7,7 +7,6 @@ class Visit < ApplicationRecord
   validate :end_date_okay
 
   def start_date_okay
-    # binding.pry
     if self.start_date < self.vacation.start_date || self.start_date > self.vacation.end_date
       errors.add("Start date", "cannot conflict with the vacation dates.")
     end

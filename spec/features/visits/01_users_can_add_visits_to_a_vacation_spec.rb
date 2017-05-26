@@ -24,18 +24,17 @@ feature "users can add visits to vacations" do
     click_button "Create Visit"
 
     expect(page).to have_content("Visit added to #{vacation_01.name}.")
-    expect(page).to have_content("Olympic National Park")
+    expect(page).to have_link("Olympic National Park")
     expect(page).to have_content("from April 7 - 12")
     expect(vacation_01.visits.first.park.name).to eq "Olympic"
   end
 
-  # currently no way not to select a park
+  # currently no way not to select a park when creating a visit
   # scenario "visits not created if user does not select a park"
 
-
-  # may not need this test if I can adjust the visit date range to
-  # fall within its vacation
   scenario "visits not created if the dates conflict with the vacation" do
+    # may not need this test if I can adjust the visit date range to
+    # fall within its vacation
     FactoryGirl.create(:park, name: "Grand Tetons")
 
     visit "/"

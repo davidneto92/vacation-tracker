@@ -22,7 +22,8 @@
   <li>Visits:
     <ul>
       <% @visits.each do |visit| %>
-        <li><%= "#{visit.park.full_name}, from #{visit.text_dates}" %></li>
+        <li><%= link_to "#{visit.park.full_name}", park_path(visit.park) %>
+          <%= ", from #{visit.text_dates}" %> - <%= link_to "Edit", edit_vacation_visit_path(@vacation, visit) %></li>
       <% end %>
     </ul>
 </ul>

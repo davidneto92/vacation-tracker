@@ -8,7 +8,7 @@ class Park < ApplicationRecord
   validates :park_type, inclusion: { in: ["National Park", "National Monument"] }
 
   def state_abbreviation
-    Park::ABBREVIATIONS[ Park::STATES.index(self.state) ]
+    return Park::ABBREVIATIONS[ Park::STATES.index(self.state) ]
   end
 
   def full_name
