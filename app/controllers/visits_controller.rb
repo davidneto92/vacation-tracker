@@ -1,7 +1,7 @@
 class VisitsController < ApplicationController
   before_action :authorize_sign_in
-  before_action :authorize_creation, only: [:new]
-  before_action :authorize_management, only: [:edit, :update, :destroy]
+  before_action :authorize_management#, only: [:new]
+  # before_action :authorize_edit, only: [:edit, :update, :destroy]
 
   def new
     @vacation = Vacation.find(params[:vacation_id])
@@ -27,7 +27,6 @@ class VisitsController < ApplicationController
   end
 
   def edit
-    # binding.pry
     @vacation = Vacation.find(params[:vacation_id])
     @park_list = Park.all.order(:name)
     @visit = Visit.find(params[:id])
@@ -49,6 +48,13 @@ class VisitsController < ApplicationController
     end
   end
 
+  def destroy
+    @visit = Visit.find(params[:id])
+    flash[:notice] = "Visit to #{@visit.park.full_name} deleted."
+    @visit.destroy
+    redirect_to ( Vacation.find(params[:vacation_id]) )
+  end
+
 
   private
 
@@ -62,17 +68,16 @@ class VisitsController < ApplicationController
     end
   end
 
-  def authorize_creation
-    # binding.pry
+  def authorize_management
     if !(current_user.vacations.include?(Vacation.find(params[:vacation_id])))
       render file: "#{Rails.root}/public/404.html", layout: false, status: 404
     end
   end
 
-  def authorize_management
-    if !(current_user.vacations.include?(Vacation.find(params[:id])))
-      render file: "#{Rails.root}/public/404.html", layout: false, status: 404
-    end
-  end
+  # def authorize_edit
+  #   if !(current_user.vacations.include?(Vacation.find(params[:id])))
+  #     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+  #   end
+  # end
 
 end

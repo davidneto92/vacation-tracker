@@ -1,7 +1,7 @@
 class Vacation < ApplicationRecord
   belongs_to :user
 
-  has_many :visits
+  has_many :visits, dependent: :destroy
   has_many :parks, through: :visits
 
   validates :name, :location, :start_date, :end_date, presence: true
