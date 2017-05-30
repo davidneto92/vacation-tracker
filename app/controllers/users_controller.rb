@@ -2,18 +2,21 @@ class UsersController < ApplicationController
   before_action :authorize_sign_in
   before_action :authorize_edit, only: [:edit, :update, :destroy]
 
+  def omniauth_failure
+    flash[:alert] = "There an error signing in with Google. Please try again."
+    redirect_to root_path
+  end
+
   def show
     @user = User.find(params[:id])
-
   end
 
   def edit
     @user = User.find(params[:id])
   end
 
-  def update
-
-  end
+  # def update
+  # end
 
   def destroy
     @user = User.find(params[:id])
