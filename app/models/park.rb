@@ -1,9 +1,18 @@
 class Park < ApplicationRecord
+  has_many :visits
+
+  has_many :vacations, through: :visits
+  has_many :users, through: :visits
+
 
   validates :park_type, inclusion: { in: ["National Park", "National Monument"] }
 
   def state_abbreviation
-    Park::ABBREVIATIONS[ Park::STATES.index(self.state) ]
+    return Park::ABBREVIATIONS[ Park::STATES.index(self.state) ]
+  end
+
+  def full_name
+    "#{self.name} #{self.park_type}"
   end
 
   STATES = [

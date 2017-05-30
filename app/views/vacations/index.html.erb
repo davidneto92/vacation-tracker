@@ -1,0 +1,11 @@
+<h1>All User Vacations</h1>
+
+<% if current_user %>
+  <%= link_to "Create a new vacation", new_vacation_path %>
+<% end %>
+
+<ul>
+  <% @vacations.each do |vacation| %>
+    <li><%= link_to "#{vacation.name}", vacation_path(vacation) %></li>
+  <% end %>
+</ul>

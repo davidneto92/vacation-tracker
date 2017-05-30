@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
   resources :users #, only: [:show, :destroy]
   resources :parks, only: [:show, :index]
+  resources :vacations
+
+  resources :vacations do
+    resources :visits, except: [:show, :index]
+  end
 
   root to: "home#show"
 end

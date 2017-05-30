@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 Park.create(
   name: "Acadia",
   state: "Maine",
@@ -253,7 +245,7 @@ Park.create(
 )
 
 Park.create(
-  name: "Mount Rainer",
+  name: "Mount Rainier",
   state: "Washington",
   park_type: "National Park"
 )
@@ -278,7 +270,7 @@ Park.create(
 
 Park.create(
   name: "Pinnacles",
-  state: "",
+  state: "California",
   park_type: "National Park"
 )
 
@@ -325,7 +317,7 @@ Park.create(
 )
 
 Park.create(
-  name: "Voyaguers",
+  name: "Voyageurs",
   state: "Minnesota",
   park_type: "National Park"
 )
@@ -338,7 +330,7 @@ Park.create(
 
 Park.create(
   name: "Wrangell-St. Elias",
-  state: "",
+  state: "Alaska",
   park_type: "National Park"
 )
 

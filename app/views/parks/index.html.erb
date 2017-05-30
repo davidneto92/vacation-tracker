@@ -2,6 +2,6 @@
 
 <ul>
   <% @parks.each do |park| %>
-    <li><%= link_to "#{park.name}", park_path(park) %> - <%= park.state_abbreviation %></li>
+    <li><%= link_to "#{park.full_name}", park_path(park) %>, <%= park.state_abbreviation %></li>
   <% end %>
 </ul>

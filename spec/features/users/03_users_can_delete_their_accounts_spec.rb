@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "users can edit and delete their account" do
+feature "users can delete their account" do
   scenario "user can visit a page to delete their account information" do
     visit "/"
     click_link "Sign in with Google"
@@ -15,7 +15,7 @@ feature "users can edit and delete their account" do
     expect(page).to have_content("Vacation Tracker")
   end
 
-  scenario "users cannot edit another user's account" do
+  scenario "users cannot delete another user's account" do
     another_user = FactoryGirl.create(:user, name: "Terry Bull")
 
     visit "/"
@@ -29,5 +29,4 @@ feature "users can edit and delete their account" do
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 
-  pending "admin can delete any account"
 end
