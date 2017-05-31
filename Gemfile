@@ -8,6 +8,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'foundation-rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
