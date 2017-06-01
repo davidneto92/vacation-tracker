@@ -12,10 +12,9 @@
   <% end %>
 
   <%= f.label :name, "Vacation Name" %>
-  <%= f.text_field :name %><br>
-
+  <%= f.text_field :name %>
   <%= f.label :location, "Location" %>
-  <%= f.text_field :location %><br>
+  <%= f.text_field :location %>
 
   <%= f.label :description, "Description (optional)" %>
   <%= f.text_area :description %><br>
@@ -28,13 +27,15 @@
 
 
   <p>Do you want this vacation to be public?</p>
-  <%= f.label :display_public, "Yes", value: true %>
   <%= f.radio_button :display_public, true %>
-  <%= f.label :display_public, "No", value: false %>
+  <%= f.label :display_public, "Yes", value: true %>
   <%= f.radio_button :display_public, false %>
+  <%= f.label :display_public, "No", value: false %>
 
   <br><br>
 
   <%= f.submit "Create Vacation" %>
+
+  <br><br>
 
 <% end %>
