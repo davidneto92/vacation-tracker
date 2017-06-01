@@ -62,7 +62,7 @@ feature "users create a vacation" do
     click_button("Create Vacation")
 
     expect(page).to_not have_content("Vacation created!")
-    expect(page).to have_content("4 errors in Vacation creation")
+    expect(page).to have_content("errors in Vacation creation")
     expect(page).to have_content("Name can't be blank")
     expect(page).to have_content("Name is too short (minimum is 5 characters)")
     expect(page).to have_content("Location can't be blank")

@@ -12,4 +12,27 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+
+.footer {
+  display: block;
+  background-color: #232323;
+}
+
+.footer a {
+  color: #dbdbdb;
+}
+
+.footer a:hover {
+  color: #929292;
+}
+
+.alert {
+
+}
+
+.notice {
+  
+}
