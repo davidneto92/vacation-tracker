@@ -111,7 +111,9 @@ Park.create(
 Park.create(
   name: "Everglades",
   state: "Florida",
-  park_type: "National Park"
+  park_type: "National Park",
+  latitude: 25.287,
+  longitude: -80.899
 )
 
 Park.create(
@@ -287,7 +289,9 @@ Park.create(
 Park.create(
   name: "Rocky Mountain",
   state: "Colorado",
-  park_type: "National Park"
+  park_type: "National Park",
+  latitude: 40.343,
+  longitude: -105.684
 )
 
 Park.create(
