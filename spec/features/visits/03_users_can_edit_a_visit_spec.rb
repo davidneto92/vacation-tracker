@@ -29,7 +29,7 @@ feature "users can edit visits within a vacation" do
 
     expect(page).to have_content("Visit updated!")
     expect(page).to have_link("#{@park_02.full_name}")
-    expect(page).to have_content("from May 4 - 7")
+    expect(page).to have_content("from May 4, 2016 - May 7, 2016")
     expect(@vacation.visits.first.park.name).to eq(@park_02.name)
   end
 

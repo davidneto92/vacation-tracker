@@ -26,16 +26,17 @@ class Vacation < ApplicationRecord
   end
 
   def text_dates
-    # if (self.start_date.year != self.end_date.year)
-    #   # years different
-      return "#{self.start_date.strftime "%B %e, %Y"} - #{self.end_date.strftime "%B %e, %Y"}"
-    # elsif self.start_date.month != self.end_date.month
-    #   # years same, months different
-    #   return "#{self.start_date.strftime "%B %e"} - #{self.end_date.strftime "%B %e"}"
-    # else
-    #   #years same, months same
-    #   return "#{self.start_date.strftime "%B %e"} - #{self.end_date.strftime "%e"}"
-    # end
+    return "#{self.start_date.strftime "%B %e, %Y"} - #{self.end_date.strftime "%B %e, %Y"}"
+  end
+
+  def find_center
+    lat_average = (self.visits.map{ |visit| visit.park.latitude }.inject(:+))  / self.visits.count
+    lng_average = (self.visits.map{ |visit| visit.park.longitude }.inject(:+)) / self.visits.count
+    return [lat_average.round(3), lng_average.round(3)]
+  end
+
+  def find_zoom
+
   end
 
 end

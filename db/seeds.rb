@@ -37,7 +37,9 @@ Park.create(
 Park.create(
   name: "Black Canyon of the Gunnison",
   state: "Colorado",
-  park_type: "National Park"
+  park_type: "National Park",
+  latitude: 38.574,
+  longitude: -107.742
 )
 
 Park.create(
@@ -151,7 +153,9 @@ Park.create(
 Park.create(
   name: "Great Sand Dunes",
   state: "Colorado",
-  park_type: "National Park"
+  park_type: "National Park",
+  latitude: 37.792,
+  longitude: -105.594
 )
 
 Park.create(
