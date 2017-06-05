@@ -1,4 +1,4 @@
-function initMap() {
+function initVacationMap() {
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
     center: {lat: window.map_center[0], lng: window.map_center[1]},
@@ -17,9 +17,10 @@ function initMap() {
         if (visit.vacation_id === window.vacation_id) {
           marker = new google.maps.Marker({
             position: {lat: visit.lat, lng: visit.lng},
-            label: visit.park_name[0],
             map: map,
-            name: visit.park_name,
+            label: visit.full_name[0],
+            name: visit.name,
+            full_name: visit.full_name,
             date: visit.visit_date
           });
 
@@ -38,7 +39,7 @@ function initMap() {
 
       for (let i = 0; i < markerList.length; i++) {
         let infowindow = new google.maps.InfoWindow({
-          content: `<div class="text-center"><strong>${markerList[i].name}</strong><br>${markerList[i].date}</div>`
+          content: `<div class="text-center"><strong>${markerList[i].full_name}</strong><br>${markerList[i].date}</div>`
         });
 
         markerList[i].addListener('click', function() {
