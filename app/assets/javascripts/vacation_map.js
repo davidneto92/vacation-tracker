@@ -1,5 +1,5 @@
 function initVacationMap() {
-  let map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
     center: {lat: window.map_center[0], lng: window.map_center[1]},
     mapTypeId: 'terrain',
