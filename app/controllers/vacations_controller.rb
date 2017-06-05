@@ -10,6 +10,9 @@ class VacationsController < ApplicationController
   def show
     @vacation = Vacation.where(id: params[:id]).first
     @visits = @vacation.visits
+    if !@vacation.visits.empty?
+      @map_center = @vacation.find_center
+    end
   end
 
   def new

@@ -23,9 +23,11 @@ group :development, :test do
   gem 'launchy', require: false
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
-  # gem 'shoulda'
   gem 'valid_attribute'
   gem 'database_cleaner'
+
+  gem 'jasmine'
+
 end
 
 group :production do

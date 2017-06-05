@@ -34,5 +34,11 @@
 }
 
 .notice {
-  
+
+}
+
+#map {
+  width: 100%;
+  height: 35em;
+  background-color: grey;
 }
