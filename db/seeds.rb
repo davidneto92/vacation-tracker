@@ -83,7 +83,7 @@ Park.create(
   state: "New Mexico",
   park_type: "National Park",
   latitude: 32.148,
-  longitude: -105.557
+  longitude: -104.557
 )
 
 Park.create(

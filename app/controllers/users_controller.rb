@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if !@user.vacations.empty?
+      @vacations = @user.vacations.where(display_public: true)
+    end
   end
 
   def edit

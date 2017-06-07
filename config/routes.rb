@@ -17,7 +17,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :visits, only: [:index]
+      resources :vacations, only: [:index, :show]
+    end
+  end
+
+  # api for users
+  namespace :api do
+    namespace :v1 do
+      resources :user_visits, only: [:show]
     end
   end
 
