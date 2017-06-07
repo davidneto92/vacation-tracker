@@ -3,3 +3,39 @@
 <% if current_user.id == @user.id %>
   <%= link_to "Account Management", edit_user_path(@user) %>
 <% end %>
+
+<% if @vacations %>
+  <h3>Vacations</h3>
+  <table>
+    <thead>
+      <tr>
+        <th width="450">Vacation Name</th>
+        <th width="250">Location</th>
+        <th width="300">Dates</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vacations.each do |vacation| %>
+      <tr>
+        <td><%= link_to "#{vacation.name}", vacation_path(vacation) %></td>
+        <td><%= vacation.location %></td>
+        <td><%= vacation.text_dates %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br>
+
+<h3>Map of Visited Parks</h3>
+<div id="map">
+
+  <%= javascript_tag do %>
+    window.user_id = <%= @user.id %>;
+  <% end %>
+
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initUserMap" %>
+
+</div>
+<br>

@@ -1,4 +1,4 @@
-// trying to use an ES5 version to see if it will compile with heroku
+// Converted from ES6 to ES5 to make compatible with Heroku
 
 function initVacationMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -13,7 +13,7 @@ function initVacationMap() {
 
   $.ajax({
     method: 'GET',
-    url: '/api/v1/visits',
+    url: '/api/v1/vacations/' + vacation_id,
     success: function success(visits) {
       $.each(visits, function (x, visit) {
         if (visit.vacation_id === window.vacation_id) {
