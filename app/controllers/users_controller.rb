@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:user_id])
       map_data = UserVisitsSerializer.perform(@user)
-      KmlWriter.write_kml(map_data)
+      KmlWriter.write_kml(map_data, @user.uid)
     end
   end
 

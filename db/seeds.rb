@@ -3,7 +3,8 @@ Park.create(
   state: "Maine",
   park_type: "National Park",
   latitude: 44.339,
-  longitude: -68.273
+  longitude: -68.273,
+  nps_url: "https://www.nps.gov/acad/index.htm"
 )
 
 Park.create(
@@ -11,7 +12,8 @@ Park.create(
   state: "US Territories",
   park_type: "National Park",
   latitude: -14.258,
-  longitude: -170.683
+  longitude: -170.683,
+  nps_url: "https://www.nps.gov/npsa/index.htm"
 )
 
 Park.create(
@@ -19,7 +21,8 @@ Park.create(
   state: "Utah",
   park_type: "National Park",
   latitude: 38.733,
-  longitude: -109.593
+  longitude: -109.593,
+  nps_url: "https://www.nps.gov/arch/index.htm"
 )
 
 Park.create(
@@ -27,7 +30,8 @@ Park.create(
   state: "South Dakota",
   park_type: "National Park",
   latitude: 43.855,
-  longitude: -102.340
+  longitude: -102.340,
+  nps_url: "https://www.nps.gov/badl/index.htm"
 )
 
 Park.create(
@@ -35,7 +39,8 @@ Park.create(
   state: "Texas",
   park_type: "National Park",
   latitude: 29.128,
-  longitude: -103.243
+  longitude: -103.243,
+  nps_url: "https://www.nps.gov/bibe/index.htm"
 )
 
 Park.create(
@@ -43,7 +48,8 @@ Park.create(
   state: "Florida",
   park_type: "National Park",
   latitude: 25.482,
-  longitude: -80.208
+  longitude: -80.208,
+  nps_url: "https://www.nps.gov/bisc/index.htm"
 )
 
 Park.create(
@@ -51,7 +57,8 @@ Park.create(
   state: "Colorado",
   park_type: "National Park",
   latitude: 38.574,
-  longitude: -107.742
+  longitude: -107.742,
+  nps_url: "https://www.nps.gov/blca/index.htm"
 )
 
 Park.create(
@@ -59,7 +66,8 @@ Park.create(
   state: "Utah",
   park_type: "National Park",
   latitude: 37.593,
-  longitude: -112.187
+  longitude: -112.187,
+  nps_url: "https://www.nps.gov/brca/index.htm"
 )
 
 Park.create(
@@ -67,7 +75,8 @@ Park.create(
   state: "Utah",
   park_type: "National Park",
   latitude: 38.327,
-  longitude: -109.878
+  longitude: -109.878,
+  nps_url: "https://www.nps.gov/cany/index.htm"
 )
 
 Park.create(
@@ -75,7 +84,8 @@ Park.create(
   state: "Utah",
   park_type: "National Park",
   latitude: 33.367,
-  longitude: -111.262
+  longitude: -111.262,
+  nps_url: "https://www.nps.gov/care/index.htm"
 )
 
 Park.create(
@@ -83,7 +93,8 @@ Park.create(
   state: "New Mexico",
   park_type: "National Park",
   latitude: 32.148,
-  longitude: -104.557
+  longitude: -104.557,
+  nps_url: "https://www.nps.gov/cave/index.htm"
 )
 
 Park.create(
@@ -91,7 +102,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 34.003,
-  longitude: -119.710
+  longitude: -119.710,
+  nps_url: "https://www.nps.gov/chis/index.htm"
 )
 
 Park.create(
@@ -99,7 +111,8 @@ Park.create(
   state: "South Carolina",
   park_type: "National Park",
   latitude: 33.793,
-  longitude: -80.7811
+  longitude: -80.7811,
+  nps_url: "https://www.nps.gov/cong/index.htm"
 )
 
 Park.create(
@@ -107,7 +120,8 @@ Park.create(
   state: "Oregon",
   park_type: "National Park",
   latitude: 42.868,
-  longitude: -122.169
+  longitude: -122.169,
+  nps_url: "https://www.nps.gov/crla/index.htm"
 )
 
 Park.create(
@@ -115,7 +129,8 @@ Park.create(
   state: "Ohio",
   park_type: "National Park",
   latitude: 41.281,
-  longitude: -81.568
+  longitude: -81.568,
+  nps_url: "https://www.nps.gov/cuva/index.htm"
 )
 
 Park.create(
@@ -123,7 +138,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 36.505,
-  longitude: -117.079
+  longitude: -117.079,
+  nps_url: "https://www.nps.gov/deva/index.htm"
 )
 
 Park.create(
@@ -131,7 +147,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 63.115,
-  longitude: -151.193
+  longitude: -151.193,
+  nps_url: "https://www.nps.gov/dena/index.htm"
 )
 
 Park.create(
@@ -139,7 +156,8 @@ Park.create(
   state: "Florida",
   park_type: "National Park",
   latitude: 24.629,
-  longitude: -82.873
+  longitude: -82.873,
+  nps_url: "https://www.nps.gov/drto/index.htm"
 )
 
 Park.create(
@@ -147,7 +165,8 @@ Park.create(
   state: "Florida",
   park_type: "National Park",
   latitude: 25.287,
-  longitude: -80.899
+  longitude: -80.899,
+  nps_url: "https://www.nps.gov/ever/index.htm"
 )
 
 Park.create(
@@ -155,7 +174,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 67.915,
-  longitude: -153.464
+  longitude: -153.464,
+  nps_url: "https://www.nps.gov/gaar/index.htm"
 )
 
 Park.create(
@@ -163,7 +183,8 @@ Park.create(
   state: "Montana",
   park_type: "National Park",
   latitude: 48.760,
-  longitude: -113.787
+  longitude: -113.787,
+  nps_url: "https://www.nps.gov/glac/index.htm"
 )
 
 Park.create(
@@ -171,7 +192,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 58.666,
-  longitude: -136.900
+  longitude: -136.900,
+  nps_url: "https://www.nps.gov/glba/index.htm"
 )
 
 Park.create(
@@ -179,7 +201,8 @@ Park.create(
   state: "Arizona",
   park_type: "National Park",
   latitude: 36.107,
-  longitude: -112.113
+  longitude: -112.113,
+  nps_url: "https://www.nps.gov/grca/index.htm"
 )
 
 Park.create(
@@ -187,7 +210,8 @@ Park.create(
   state: "Wyoming",
   park_type: "National Park",
   latitude: 43.790,
-  longitude: -110.682
+  longitude: -110.682,
+  nps_url: "https://www.nps.gov/grte/index.htm"
 )
 
 Park.create(
@@ -195,7 +219,8 @@ Park.create(
   state: "Nevada",
   park_type: "National Park",
   latitude: 38.983,
-  longitude: -114.300
+  longitude: -114.300,
+  nps_url: "https://www.nps.gov/grba/index.htm"
 )
 
 Park.create(
@@ -203,7 +228,8 @@ Park.create(
   state: "Colorado",
   park_type: "National Park",
   latitude: 37.792,
-  longitude: -105.594
+  longitude: -105.594,
+  nps_url: "https://www.nps.gov/grsa/index.htm"
 )
 
 Park.create(
@@ -211,7 +237,8 @@ Park.create(
   state: "Tennessee",
   park_type: "National Park",
   latitude: 35.612,
-  longitude: -83.490
+  longitude: -83.490,
+  nps_url: "https://www.nps.gov/grsm/index.htm"
 )
 
 Park.create(
@@ -219,7 +246,8 @@ Park.create(
   state: "Texas",
   park_type: "National Park",
   latitude: 31.945,
-  longitude: -104.873
+  longitude: -104.873,
+  nps_url: "https://www.nps.gov/gumo/index.htm"
 )
 
 Park.create(
@@ -227,7 +255,8 @@ Park.create(
   state: "Hawaii",
   park_type: "National Park",
   latitude: 20.720,
-  longitude: -156.155
+  longitude: -156.155,
+  nps_url: "https://www.nps.gov/hale/index.htm"
 )
 
 Park.create(
@@ -235,7 +264,8 @@ Park.create(
   state: "Hawaii",
   park_type: "National Park",
   latitude: 19.419,
-  longitude: -155.289
+  longitude: -155.289,
+  nps_url: "https://www.nps.gov/havo/index.htm"
 )
 
 Park.create(
@@ -243,7 +273,8 @@ Park.create(
   state: "Arkansas",
   park_type: "National Park",
   latitude: 34.522,
-  longitude: -93.042
+  longitude: -93.042,
+  nps_url: "https://www.nps.gov/hosp/index.htm"
 )
 
 Park.create(
@@ -251,7 +282,8 @@ Park.create(
   state: "Michigan",
   park_type: "National Park",
   latitude: 47.996,
-  longitude: -88.909
+  longitude: -88.909,
+  nps_url: "https://www.nps.gov/isro/index.htm"
 )
 
 Park.create(
@@ -259,7 +291,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 33.873,
-  longitude: -115.901
+  longitude: -115.901,
+  nps_url: "https://www.nps.gov/jotr/index.htm"
 )
 
 Park.create(
@@ -267,7 +300,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 58.598,
-  longitude: -154.694
+  longitude: -154.694,
+  nps_url: "https://www.nps.gov/katm/index.htm"
 )
 
 Park.create(
@@ -275,7 +309,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 60.044,
-  longitude: -149.816
+  longitude: -149.816,
+  nps_url: "https://www.nps.gov/kefj/index.htm"
 )
 
 Park.create(
@@ -283,7 +318,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 36.888,
-  longitude: -118.555
+  longitude: -118.555,
+  nps_url: "https://www.nps.gov/seki/index.htm"
 )
 
 Park.create(
@@ -291,7 +327,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 67.336,
-  longitude: -159.124
+  longitude: -159.124,
+  nps_url: "https://www.nps.gov/kova/index.htm"
 )
 
 Park.create(
@@ -299,7 +336,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 60.413,
-  longitude: -154.324
+  longitude: -154.324,
+  nps_url: "https://www.nps.gov/lacl/index.htm"
 )
 
 Park.create(
@@ -307,7 +345,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 40.498,
-  longitude: -121.421
+  longitude: -121.421,
+  nps_url: "https://www.nps.gov/lavo/index.htm"
 )
 
 Park.create(
@@ -315,7 +354,8 @@ Park.create(
   state: "Kentucky",
   park_type: "National Park",
   latitude: 37.187,
-  longitude: -86.101
+  longitude: -86.101,
+  nps_url: "https://www.nps.gov/maca/index.htm"
 )
 
 Park.create(
@@ -323,7 +363,8 @@ Park.create(
   state: "Colorado",
   park_type: "National Park",
   latitude: 37.231,
-  longitude: -108.462
+  longitude: -108.462,
+  nps_url: "https://www.nps.gov/meve/index.htm"
 )
 
 Park.create(
@@ -331,7 +372,8 @@ Park.create(
   state: "Washington",
   park_type: "National Park",
   latitude: 46.880,
-  longitude: -121.727
+  longitude: -121.727,
+  nps_url: "https://www.nps.gov/mora/index.htm"
 )
 
 Park.create(
@@ -339,7 +381,8 @@ Park.create(
   state: "Washington",
   park_type: "National Park",
   latitude: 48.772,
-  longitude: -121.299
+  longitude: -121.299,
+  nps_url: "https://www.nps.gov/noca/index.htm"
 )
 
 Park.create(
@@ -347,7 +390,8 @@ Park.create(
   state: "Washington",
   park_type: "National Park",
   latitude: 47.802,
-  longitude: -123.604
+  longitude: -123.604,
+  nps_url: "https://www.nps.gov/olym/index.htm"
 )
 
 Park.create(
@@ -355,7 +399,8 @@ Park.create(
   state: "Arizona",
   park_type: "National Park",
   latitude: 34.910,
-  longitude: -109.807
+  longitude: -109.807,
+  nps_url: "https://www.nps.gov/pefo/index.htm"
 )
 
 Park.create(
@@ -363,7 +408,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 36.491,
-  longitude: -121.183
+  longitude: -121.183,
+  nps_url: "https://www.nps.gov/pinn/index.htm"
 )
 
 Park.create(
@@ -371,7 +417,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 41.213,
-  longitude: -124.005
+  longitude: -124.005,
+  nps_url: "https://www.nps.gov/redw/index.htm"
 )
 
 Park.create(
@@ -379,7 +426,8 @@ Park.create(
   state: "Colorado",
   park_type: "National Park",
   latitude: 40.343,
-  longitude: -105.684
+  longitude: -105.684,
+  nps_url: "https://www.nps.gov/romo/index.htm"
 )
 
 Park.create(
@@ -387,7 +435,8 @@ Park.create(
   state: "Arizona",
   park_type: "National Park",
   latitude: 32.297,
-  longitude: -111.167
+  longitude: -111.167,
+  nps_url: "https://www.nps.gov/sagu/index.htm"
 )
 
 Park.create(
@@ -395,7 +444,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 36.486,
-  longitude: -118.566
+  longitude: -118.566,
+  nps_url: "https://www.nps.gov/seki/index.htm"
 )
 
 Park.create(
@@ -403,7 +453,8 @@ Park.create(
   state: "Virginia",
   park_type: "National Park",
   latitude: 38.293,
-  longitude: -78.680
+  longitude: -78.680,
+  nps_url: "https://www.nps.gov/shen/index.htm"
 )
 
 Park.create(
@@ -411,7 +462,8 @@ Park.create(
   state: "North Dakota",
   park_type: "National Park",
   latitude: 46.979,
-  longitude: -103.539
+  longitude: -103.539,
+  nps_url: "https://www.nps.gov/thro/index.htm"
 )
 
 Park.create(
@@ -419,7 +471,8 @@ Park.create(
   state: "US Territories",
   park_type: "National Park",
   latitude: 18.342,
-  longitude: -64.749
+  longitude: -64.749,
+  nps_url: "https://www.nps.gov/viis/index.htm"
 )
 
 Park.create(
@@ -427,7 +480,8 @@ Park.create(
   state: "Minnesota",
   park_type: "National Park",
   latitude: 48.484,
-  longitude: -92.827
+  longitude: -92.827,
+  nps_url: "https://www.nps.gov/voya/index.htm"
 )
 
 Park.create(
@@ -435,7 +489,8 @@ Park.create(
   state: "South Dakota",
   park_type: "National Park",
   latitude: 43.605,
-  longitude: -103.421
+  longitude: -103.421,
+  nps_url: "https://www.nps.gov/wica/index.htm"
 )
 
 Park.create(
@@ -443,7 +498,8 @@ Park.create(
   state: "Alaska",
   park_type: "National Park",
   latitude: 61.710,
-  longitude: -142.986
+  longitude: -142.986,
+  nps_url: "https://www.nps.gov/wrst/index.htm"
 )
 
 Park.create(
@@ -451,7 +507,8 @@ Park.create(
   state: "Wyoming",
   park_type: "National Park",
   latitude: 44.428,
-  longitude: -110.589
+  longitude: -110.589,
+  nps_url: "https://www.nps.gov/yell/index.htm"
 )
 
 Park.create(
@@ -459,7 +516,8 @@ Park.create(
   state: "California",
   park_type: "National Park",
   latitude: 37.865,
-  longitude: -119.538
+  longitude: -119.538,
+  nps_url: "https://www.nps.gov/yose/index.htm"
 )
 
 Park.create(
@@ -467,5 +525,6 @@ Park.create(
   state: "Utah",
   park_type: "National Park",
   latitude: 37.298,
-  longitude: -113.026
+  longitude: -113.026,
+  nps_url: "https://www.nps.gov/zion/index.htm"
 )

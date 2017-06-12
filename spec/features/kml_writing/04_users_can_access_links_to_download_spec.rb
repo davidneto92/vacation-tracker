@@ -21,8 +21,6 @@ feature "users can access the link to download a .kml file their visits" do
   end
 
   pending "users must be signed in to download a map"
-    # expect(page).to_not have_button("Export to Google My Maps")
-
     # visit "/users/#{User.last.id}/user_visits_download"
     # expect(page).to_not have_content("The page you were looking for doesn't exist.")
 

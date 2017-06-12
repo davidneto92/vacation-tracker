@@ -42,6 +42,13 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
 
 
 RSpec.configure do |config|
+  # deletes .kml files created during tests
+  config.after(:all) do
+    if Rails.env.test? || Rails.env.cucumber?
+      FileUtils.rm_rf(Dir["#{Rails.root}/spec/fixtures/files/*"])
+    end
+  end
+
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
