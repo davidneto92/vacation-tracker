@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize_sign_in
-  before_action :authorize_edit, only: [:edit, :update, :destroy]
+  before_action :authorize_edit, only: [:edit, :update, :destroy, :user_visits_download]
 
   def omniauth_failure
     flash[:alert] = "There an error signing in with Google. Please try again."
@@ -26,6 +26,16 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     @user.destroy
     redirect_to root_path
+  end
+
+  def user_visits_download
+    if params[:user_id].nil?
+      redirect_to root_path
+    else
+      @user = User.find(params[:user_id])
+      map_data = UserVisitsSerializer.perform(@user)
+      KmlWriter.write_kml(map_data)
+    end
   end
 
   private

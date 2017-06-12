@@ -110,4 +110,11 @@ RSpec.configure do |config|
   config.after(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
+
+
+
+  config.before( :each ) do
+    DownloadHelpers::clear_downloads
+  end
+
 end

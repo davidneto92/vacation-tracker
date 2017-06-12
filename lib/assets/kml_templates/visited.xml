@@ -1,0 +1,11 @@
+<!-- Visited -->
+<Placemark>
+  <name>Acadia National Park</name>
+  <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm<br>Last visited on September 8th, 2016]]></description>
+  <styleUrl>#icon-1899-0F9D58</styleUrl>
+  <Point>
+    <coordinates>
+      -68.273335,44.338556,0
+    </coordinates>
+  </Point>
+</Placemark>

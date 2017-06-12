@@ -43,19 +43,6 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
 
 RSpec.configure do |config|
 
-
-  # Databse Cleaning block to remove entries after each feature test
-  # config.before(:suite) do
-  #   DatabaseCleaner.strategy = :transaction
-  #   DatabaseCleaner.clean_with(:truncation)
-  # end
-  # config.around(:each) do |example|
-  #   DatabaseCleaner.cleaning do
-  #     example.run
-  #   end
-  # end
-
-
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -89,4 +76,15 @@ require "valid_attribute"
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+end
+
+require 'shared/download_helper'
+Capybara.register_driver :selenium do |app|
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile['browser.download.dir'] = DownloadHelpers::PATH.to_s
+  profile['browser.download.folderList'] = 2
+
+  # Suppress "open with" dialog
+  profile['browser.helperApps.neverAsk.saveToDisk'] = 'text/csv'
+  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => profile)
 end
