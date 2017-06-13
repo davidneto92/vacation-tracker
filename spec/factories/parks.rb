@@ -5,5 +5,6 @@ FactoryGirl.define do
     state Park::STATES.sample
     latitude 43.855
     longitude -102.340
+    nps_url "https://www.nps.gov/acad/index.htm"
   end
 end

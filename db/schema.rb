@@ -10,55 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602161624) do
+ActiveRecord::Schema.define(version: 20170612153552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "parks", force: :cascade do |t|
-    t.string   "name"
-    t.string   "park_type"
-    t.string   "state"
+  create_table "parks", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "park_type"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float    "latitude"
-    t.float    "longitude"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "nps_url"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "vacations", force: :cascade do |t|
-    t.string   "name",           null: false
-    t.string   "location",       null: false
-    t.text     "description"
-    t.boolean  "display_public", null: false
-    t.date     "start_date",     null: false
-    t.date     "end_date",       null: false
-    t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["user_id"], name: "index_vacations_on_user_id", using: :btree
+  create_table "vacations", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.string "location", null: false
+    t.text "description"
+    t.boolean "display_public", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_vacations_on_user_id"
   end
 
-  create_table "visits", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "vacation_id"
-    t.integer  "park_id"
-    t.date     "start_date",  null: false
-    t.date     "end_date",    null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["park_id"], name: "index_visits_on_park_id", using: :btree
-    t.index ["user_id"], name: "index_visits_on_user_id", using: :btree
-    t.index ["vacation_id"], name: "index_visits_on_vacation_id", using: :btree
+  create_table "visits", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "vacation_id"
+    t.integer "park_id"
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["park_id"], name: "index_visits_on_park_id"
+    t.index ["user_id"], name: "index_visits_on_user_id"
+    t.index ["vacation_id"], name: "index_visits_on_vacation_id"
   end
 
   add_foreign_key "vacations", "users"

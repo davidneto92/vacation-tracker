@@ -30,12 +30,34 @@
 
 <h3>Map of Visited Parks</h3>
 <div id="map">
-
   <%= javascript_tag do %>
     window.user_id = <%= @user.id %>;
   <% end %>
-
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initUserMap" %>
-
 </div>
 <br>
+
+<% if (current_user == @user) %>
+  <%= javascript_tag do %>
+    window.download_path = '<%=@download_path%>';
+  <% end %>
+
+  <div id="download-area" class="row">
+    <div id="download-link-area" class="column large-4 text-center">
+      <%= link_to "Export this map to Google My Maps", user_user_visits_download_path(@user), class: "button", id: "map-download-button" %>
+    </div>
+
+    <div id="download-instructions" class="column large-8">
+      <h5>How to edit this map in Google My Maps</h5>
+      <ol>
+        <li>Click the button above to generate the download link.</li>
+        <li>Download the .kml file (click to download or right-click and save).</li>
+        <li>Head to the Google <a href="https://www.google.com/maps/d/u/0/" target="_blank">My Maps</a> page.</li>
+        <li>Click the "+Create A New Map" button.</li>
+        <li>Click the blue Import button within the layer to upload the map data.</li>
+      </ol>
+    </div>
+  </div>
+
+  <br>
+<% end %>

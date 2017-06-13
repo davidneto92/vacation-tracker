@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  require 'csv'
+
   has_many :visits
   has_many :vacations
 

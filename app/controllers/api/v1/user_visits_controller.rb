@@ -3,7 +3,8 @@ class Api::V1::UserVisitsController < ApplicationController
   def show
     user = User.find(params[:id])
     # only lists parks that were visited in a publicly listed vacation
-    visited_parks = user.visits.map { |visit| visit.park if (visit.vacation.display_public == true) }.uniq
+    visited_parks = user.parks.uniq
+    # visited_parks = user.visits.map { |visit| visit.park if (visit.vacation.display_public == true) }.uniq
 
     list = []
     Park.all.each_with_index do |park, index|
