@@ -9,8 +9,9 @@ gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'foundation-rails'
-
 gem 'active_model_serializers'
+
+gem 'aws-sdk', '~> 2.9'
 
 group :development do
   gem 'listen', '~> 3.0.5'

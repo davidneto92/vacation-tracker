@@ -32,6 +32,8 @@ class KmlWriter
 
       f.puts FULL_MAP_END
     }
+    
+    return [file_path, "Visited_Parks_#{time}_#{user_uid}.kml"]
   end
 
 end

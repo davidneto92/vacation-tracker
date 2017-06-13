@@ -13,7 +13,7 @@ describe "KmlWriter correctly generates .kml" do
   end
 
   it "generates a .kml file for the supplied park list" do
-    KmlWriter.write_kml(@map_data, @user.uid)
+    path = KmlWriter.write_kml(@map_data, @user.uid)
 
     file_fixture("Visited_Parks_#{Time.now.strftime("%d%m%Y")}_MyString.kml").read.include?("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
     file_fixture("Visited_Parks_#{Time.now.strftime("%d%m%Y")}_MyString.kml").read.include?("<name>National Park 01 National Park</name><description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm<br>Last visited on May  8, 2016]]></description>")

@@ -1,6 +1,6 @@
 module DownloadHelpers
   TIMEOUT = 1
-  PATH    = Rails.root.join("tmp/downloads")
+  PATH    = Rails.root.join("spec/fixtures/files")
 
   extend self
 
@@ -19,7 +19,7 @@ module DownloadHelpers
 
   def wait_for_download
     Timeout.timeout(TIMEOUT) do
-      sleep 0.1 until downloaded?
+      sleep 3 until downloaded?
     end
   end
 

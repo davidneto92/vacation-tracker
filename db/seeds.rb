@@ -83,7 +83,7 @@ Park.create(
   name: "Capitol Reef",
   state: "Utah",
   park_type: "National Park",
-  latitude: 33.367,
+  latitude: 38.367,
   longitude: -111.262,
   nps_url: "https://www.nps.gov/care/index.htm"
 )
