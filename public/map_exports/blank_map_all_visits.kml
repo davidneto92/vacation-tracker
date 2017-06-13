@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Untitled map</name>
+    <description/>
+    <Style id="icon-1899-FFD600-normal">
+      <IconStyle>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-1.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-FFD600-highlight">
+      <IconStyle>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-1.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-FFD600">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-FFD600-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-FFD600-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>My Visited National Parks</name>
+      <Placemark>
+        <name>Acadia National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -68.273,44.339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>American Samoa National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/npsa/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -170.683,-14.258,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arches National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/arch/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -109.593,38.733,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Badlands National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/badl/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -102.34,43.855,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Big Bend National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/bibe/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -103.243,29.128,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Biscayne National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/bisc/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -80.208,25.482,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Black Canyon of the Gunnison National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/blca/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -107.742,38.574,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bryce Canyon National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/brca/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -112.187,37.593,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Canyonlands National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/cany/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -109.878,38.327,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capitol Reef National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/care/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -111.262,38.367,0
+          </coordinates>
+        </Point>
+      </Placemark>      
+      <Placemark>
+        <name>Carlsbad Caverns National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/cave/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -104.557,32.148,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Channel Islands National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/chis/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -119.71,34.003,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Conagree National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/cong/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -80.7811,33.793,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crater Lake National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/crla/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -122.169,42.868,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cuyahoga Valley National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/cuva/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -81.568,41.281,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Death Valley National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/deva/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -117.079,36.505,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Denali National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/dena/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -151.193,63.115,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Dry Tortugas National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/drto/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -82.873,24.629,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Everglades National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/ever/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -80.899,25.287,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gates of the Arctic National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/gaar/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -153.464,67.915,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Glacier National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/glac/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -113.787,48.76,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Glacier Bay National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/glba/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -136.9,58.666,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grand Canyon National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/grca/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -112.113,36.107,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Grand Teton National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/grte/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -110.682,43.79,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Great Basin National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/grba/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -114.3,38.983,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Great Sand Dunes National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/grsa/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -105.594,37.792,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Great Smoky Mountains National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/grsm/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -83.49,35.612,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Guadalupe Mountains National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/gumo/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -104.873,31.945,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Haleakalā National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/hale/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -156.155,20.72,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Hawai'i Volcanoes National Park]]></name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/havo/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -155.289,19.419,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Hot Springs National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/hosp/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -93.042,34.522,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Isle Royale National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/isro/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -88.909,47.996,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Joshua Tree National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/jotr/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -115.901,33.873,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Katmai National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/katm/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -154.694,58.598,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kenai Fjords National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/kefj/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -149.816,60.044,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kings Canyon National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/seki/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -118.555,36.888,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Kobuk Valley National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/kova/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -159.124,67.336,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lake Clark National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/lacl/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -154.324,60.413,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lassen Volcanic National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/lavo/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -121.421,40.498,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mammoth Cave National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/maca/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -86.101,37.187,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mesa Verde National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/meve/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -108.462,37.231,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Mount Rainier National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/mora/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -121.727,46.88,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>North Cascades National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/noca/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -121.299,48.772,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympic National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/olym/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -123.604,47.802,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Petrified Forest National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/pefo/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -109.807,34.91,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pinnacles National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/pinn/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -121.183,36.491,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Redwood National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/redw/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -124.005,41.213,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rocky Mountain National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/romo/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -105.684,40.343,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Saguaro National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/sagu/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -111.167,32.297,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sequoia National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/seki/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -118.566,36.486,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Shenandoah National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/shen/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -78.68,38.293,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Theodore Roosevelt National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/thro/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -103.539,46.979,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Virgin Islands National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/viis/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -64.749,18.342,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Voyageurs National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/voya/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -92.827,48.484,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wind Cave National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/wica/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -103.421,43.605,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Wrangell-St. Elias National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/wrst/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -142.986,61.71,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yellowstone National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/yell/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -110.589,44.428,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yosemite National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/yose/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -119.538,37.865,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Zion National Park</name>
+        <description><![CDATA[Official NPS Site:<br>https://www.nps.gov/zion/index.htm]]></description>
+        <styleUrl>#icon-1899-FFD600</styleUrl>
+        <Point>
+          <coordinates>
+            -113.026,37.298,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
