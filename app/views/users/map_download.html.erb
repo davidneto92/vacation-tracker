@@ -3,11 +3,10 @@
 <% end %>
 
 <div id="download-instructions" class="column large-8">
-  <%= link_to "Download your .KML to use with Google", @download_path, id: 'direct-download-link' %>
+  <a href="<%= @download_path %>" download>Download your .KML to use with Google</a>
   <h5>How to edit this map in Google My Maps</h5>
   <ol>
-    <li>Click the button above to generate the download link.</li>
-    <li>Right-click and download the .kml file.</li>
+    <li>Download the .kml file (click to download or right-click and save).</li>
     <li>Head to the Google <a href="https://www.google.com/maps/d/u/0/" target="_blank">My Maps</a> page.</li>
     <li>Click the "+Create A New Map" button.</li>
     <li>Click the blue Import button within the layer to upload the map data.</li>
