@@ -13,7 +13,8 @@ Park.create(
   park_type: "National Park",
   latitude: -14.258,
   longitude: -170.683,
-  nps_url: "https://www.nps.gov/npsa/index.htm"
+  nps_url: "https://www.nps.gov/npsa/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -103,7 +104,8 @@ Park.create(
   park_type: "National Park",
   latitude: 34.003,
   longitude: -119.710,
-  nps_url: "https://www.nps.gov/chis/index.htm"
+  nps_url: "https://www.nps.gov/chis/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -148,7 +150,8 @@ Park.create(
   park_type: "National Park",
   latitude: 63.115,
   longitude: -151.193,
-  nps_url: "https://www.nps.gov/dena/index.htm"
+  nps_url: "https://www.nps.gov/dena/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -157,7 +160,8 @@ Park.create(
   park_type: "National Park",
   latitude: 24.629,
   longitude: -82.873,
-  nps_url: "https://www.nps.gov/drto/index.htm"
+  nps_url: "https://www.nps.gov/drto/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -175,7 +179,8 @@ Park.create(
   park_type: "National Park",
   latitude: 67.915,
   longitude: -153.464,
-  nps_url: "https://www.nps.gov/gaar/index.htm"
+  nps_url: "https://www.nps.gov/gaar/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -193,7 +198,8 @@ Park.create(
   park_type: "National Park",
   latitude: 58.666,
   longitude: -136.900,
-  nps_url: "https://www.nps.gov/glba/index.htm"
+  nps_url: "https://www.nps.gov/glba/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -256,7 +262,8 @@ Park.create(
   park_type: "National Park",
   latitude: 20.720,
   longitude: -156.155,
-  nps_url: "https://www.nps.gov/hale/index.htm"
+  nps_url: "https://www.nps.gov/hale/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -265,7 +272,8 @@ Park.create(
   park_type: "National Park",
   latitude: 19.419,
   longitude: -155.289,
-  nps_url: "https://www.nps.gov/havo/index.htm"
+  nps_url: "https://www.nps.gov/havo/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -301,7 +309,8 @@ Park.create(
   park_type: "National Park",
   latitude: 58.598,
   longitude: -154.694,
-  nps_url: "https://www.nps.gov/katm/index.htm"
+  nps_url: "https://www.nps.gov/katm/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -310,7 +319,8 @@ Park.create(
   park_type: "National Park",
   latitude: 60.044,
   longitude: -149.816,
-  nps_url: "https://www.nps.gov/kefj/index.htm"
+  nps_url: "https://www.nps.gov/kefj/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -328,7 +338,8 @@ Park.create(
   park_type: "National Park",
   latitude: 67.336,
   longitude: -159.124,
-  nps_url: "https://www.nps.gov/kova/index.htm"
+  nps_url: "https://www.nps.gov/kova/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -337,7 +348,8 @@ Park.create(
   park_type: "National Park",
   latitude: 60.413,
   longitude: -154.324,
-  nps_url: "https://www.nps.gov/lacl/index.htm"
+  nps_url: "https://www.nps.gov/lacl/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -472,7 +484,8 @@ Park.create(
   park_type: "National Park",
   latitude: 18.342,
   longitude: -64.749,
-  nps_url: "https://www.nps.gov/viis/index.htm"
+  nps_url: "https://www.nps.gov/viis/index.htm",
+  drivable: false
 )
 
 Park.create(
@@ -499,7 +512,8 @@ Park.create(
   park_type: "National Park",
   latitude: 61.710,
   longitude: -142.986,
-  nps_url: "https://www.nps.gov/wrst/index.htm"
+  nps_url: "https://www.nps.gov/wrst/index.htm",
+  drivable: false
 )
 
 Park.create(

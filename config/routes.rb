@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  resources :sessions, only: [:create, :destroy]
+
+  root to: "home#show"
   get 'about', to: 'home#about'
 
-  resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
+  get 'generator', to: 'generator#index'
+  get 'generator/results', to: 'generator#show'
+
 
   resources :users #, only: [:show, :destroy]
   resources :users do
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
   resources :vacations do
     resources :visits, except: [:show, :index]
   end
+
 
   # api to map a single vacation
   namespace :api do
@@ -33,5 +38,4 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "home#show"
 end

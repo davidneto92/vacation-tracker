@@ -10,6 +10,7 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'foundation-rails'
 gem 'active_model_serializers'
+gem 'rest-client'
 
 gem 'aws-sdk', '~> 2.9'
 

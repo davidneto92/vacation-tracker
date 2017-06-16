@@ -1,0 +1,25 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_PLACES_KEY'] %>&libraries=places&callback=initAutocomplete" async defer></script>
+
+<form action="generator/results">
+  <div class="row">
+    <div id="locationField" class="medium-5 columns">
+      <label>Starting Point
+        <input id="autocomplete" placeholder="Starting Point" onFocus="geolocate()" type="text" name="start_point"></input>
+      </label>
+    </div>
+
+    <div class="medium-5 columns">
+      <label>Destination in the Lower 48
+        <%= select_tag "destination", options_for_select(@park_list.collect{ |park| [park.full_name, park.id] }) %>
+      </label>
+    </div>
+
+    <div class="medium-2 columns">
+      <label>Trip Duration (# of days)
+        <input type="number" name="duration"></input>
+      </label>
+    </div>
+  </div>
+
+  <input type="submit" value="Generate">
+</form>

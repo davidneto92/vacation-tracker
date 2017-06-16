@@ -1,0 +1,11 @@
+<h3>Generator Results</h3>
+
+<p> On your trip from <strong><%= @start_point_string %></strong> to <strong><%= @destination.name %></strong>,
+  the following locations may be on your way:
+</p>
+
+<ul>
+  <% @found_parks.each do |park| %>
+    <li><%= park.full_name %></li>
+  <% end %>
+</ul>
