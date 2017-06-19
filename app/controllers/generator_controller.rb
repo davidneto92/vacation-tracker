@@ -9,8 +9,8 @@ class GeneratorController < ApplicationController
     @start_point_string = new_trip.start_point_name
 
     @found_parks = new_trip.line_scan(
-      {"lat" => new_trip.destination_lat, "lng" => new_trip.destination_lng},
-      {"lat" => new_trip.start_point_lat, "lng" => new_trip.start_point_lng}
+      {"lat" => new_trip.start_point_lat, "lng" => new_trip.start_point_lng},
+      {"lat" => new_trip.destination_lat, "lng" => new_trip.destination_lng}
     )
 
   end

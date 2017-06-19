@@ -2,10 +2,11 @@ require "rails_helper"
 
 describe "trip generator finds parks along a route" do
   before(:each) do
-    @park_01 = FactoryGirl.create(:park, latitude: 40, longitude: -105)
-    @park_02 = FactoryGirl.create(:park, latitude: 41, longitude: -104)
-    @park_03 = FactoryGirl.create(:park, latitude: 41.1, longitude: -103)
-    @park_04 = FactoryGirl.create(:park, latitude: 50, longitude: -110)
+    @park_01 = FactoryGirl.create(:park, name: "Park 01", latitude: 40, longitude: -105)
+    @park_02 = FactoryGirl.create(:park, name: "Park 02", latitude: 41, longitude: -104)
+    @park_03 = FactoryGirl.create(:park, name: "Park 03", latitude: 41.1, longitude: -104.1)
+    @park_04 = FactoryGirl.create(:park, name: "Park 04", latitude: 50, longitude: -110)
+    @park_05 = FactoryGirl.create(:park, name: "Park 05", latitude: 45, longitude: -108)
   end
 
   it "correctly builds TripGeneration object" do
@@ -16,6 +17,16 @@ describe "trip generator finds parks along a route" do
     expect(new_trip.start_point.class).to eq Hash
     expect(new_trip.start_point_lat).to be_within(0.1).of(39.739)
     expect(new_trip.start_point_lng).to be_within(0.1).of(-104.990)
+  end
+
+  it "#area_check correctly finds parks within bounds of a point" do
+    params = {destination: @park_01.id, start_point: "Denver, CO, United States", duration: "4"}
+    new_trip = TripGeneration.new(params)
+
+    scan = new_trip.area_check("lat" => 40.5, "lng" => -104.5)
+    expect(scan.include?(@park_01)).to eq true
+    expect(scan.include?(@park_02)).to eq true
+    expect(scan.include?(@park_05)).to eq false
   end
 
   it "#line_scan searches along a route to find all matching locations" do
@@ -30,5 +41,17 @@ describe "trip generator finds parks along a route" do
     expect(found_parks.include?(@park_01)).to eq true
     expect(found_parks.include?(@park_02)).to eq true
     expect(found_parks.include?(@park_04)).to eq false
+  end
+
+  it "#proximity_sort correctly sorts found parks by their distance to the scan point" do
+    params = {destination: @park_03.id, start_point: "Denver, CO, United States", duration: "4"}
+    new_trip = TripGeneration.new(params)
+
+    sorted = new_trip.proximity_sort(
+      {"lat" => new_trip.destination_lat, "lng" => new_trip.destination_lng},
+      [@park_01, @park_02, @park_03, @park_04, @park_05]
+    )
+
+    expect(sorted).to eq [@park_03, @park_02, @park_01, @park_05, @park_04]
   end
 end
