@@ -9,7 +9,7 @@
     </div>
 
     <div class="medium-5 columns">
-      <label>Destination in the Lower 48
+      <label>Destination in the Lower 48 - <%= link_to "Why only these locations?" %>
         <%= select_tag "destination", options_for_select(@park_list.collect{ |park| [park.full_name, park.id] }) %>
       </label>
     </div>

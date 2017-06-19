@@ -1,4 +1,3 @@
-console.log('test');
 var placeSearch, autocomplete;
 
 function initAutocomplete() {

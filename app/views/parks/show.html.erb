@@ -1,7 +1,8 @@
 <h1><%= @park.name %></h1>
 
 <ul>
-  <li>Location: <%= @park.state %></li>
   <li>Type: <%= @park.park_type %></li>
+  <li>Location: <%= @park.state %></li>
   <!-- <li>Reachable by car: <%= @drivable %></li> -->
+  <li><%= link_to "Directions", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
 </ul>
