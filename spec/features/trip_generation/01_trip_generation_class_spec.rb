@@ -15,8 +15,8 @@ describe "trip generator finds parks along a route" do
 
     expect(new_trip.destination).to eq @park_01
     expect(new_trip.start_point.class).to eq Hash
-    expect(new_trip.start_point_lat).to be_within(0.1).of(39.739)
-    expect(new_trip.start_point_lng).to be_within(0.1).of(-104.990)
+    expect(new_trip.start_point_coords["lat"]).to be_within(0.1).of(39.739)
+    expect(new_trip.start_point_coords["lng"]).to be_within(0.1).of(-104.990)
   end
 
   it "#area_check correctly finds parks within bounds of a point" do
@@ -34,8 +34,8 @@ describe "trip generator finds parks along a route" do
     new_trip = TripGeneration.new(params)
 
     found_parks = new_trip.line_scan(
-      {"lat" => new_trip.destination_lat, "lng" => new_trip.destination_lng},
-      {"lat" => new_trip.start_point_lat, "lng" => new_trip.start_point_lng}
+      {"lat" => new_trip.destination.latitude, "lng" => new_trip.destination.longitude},
+      {"lat" => new_trip.start_point_coords["lat"], "lng" => new_trip.start_point_coords["lng"]}
     )
 
     expect(found_parks.include?(@park_01)).to eq true
@@ -48,7 +48,7 @@ describe "trip generator finds parks along a route" do
     new_trip = TripGeneration.new(params)
 
     sorted = new_trip.proximity_sort(
-      {"lat" => new_trip.destination_lat, "lng" => new_trip.destination_lng},
+      {"lat" => new_trip.destination.latitude, "lng" => new_trip.destination.longitude},
       [@park_01, @park_02, @park_03, @park_04, @park_05]
     )
 
