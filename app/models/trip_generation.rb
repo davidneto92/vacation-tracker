@@ -1,3 +1,4 @@
+# NOTE: Coordinates format: {"lat" => y, "lng" => x}
 class TripGeneration
   attr_accessor :destination, :start_point, :duration, :found_parks
 
@@ -28,20 +29,28 @@ class TripGeneration
     @destination.longitude
   end
 
-  # def find_parks
-  # end
+  # This method walks through each step of a route to perform a line_scan
+  def route_trace
+    directions_data = JSON.parse(RestClient.get("https://maps.googleapis.com/maps/api/directions/json?units=imperial&origin=#{ URI.encode(start_point_name) }&destination=#{ URI.encode(@destination.full_name) }4&key=#{ ENV["GOOGLE_DIRECTIONS_KEY"] }"))
+    route_steps = directions_data["routes"].first["legs"].first["steps"]
 
-  # this method walks through each step of a route to perform a line_scan
-  # def route_trace
-  # end
+    route_steps.each do |step|
+      line_scan(
+        {"lat" => (step["start_location"]["lat"]), "lng" => (step["start_location"]["lng"])},
+        {"lat" => (step["end_location"]["lat"]), "lng" => (step["end_location"]["lng"])}
+      )
+    end
+    @found_parks.delete(@destination)
+    return @found_parks
+  end
 
   # This method initiates area_checks along a straight line from point to point.
-  def line_scan(start_coords, end_coords) # {"lat" => y, "lng" => x}
-    rise, run, hypotenuse, slope, y_intercept = trigonometry(start_coords, end_coords)
+  def line_scan(start_coords, end_coords)
     scan_coords = start_coords
+    rise, run, hypotenuse, slope, y_intercept = trigonometry(start_coords, end_coords)
 
     (hypotenuse.ceil).times do
-      scan_coords["lat"] = ( (scan_coords["lng"] * slope) + y_intercept ).round(3)
+      scan_coords["lat"] = ( (scan_coords["lng"] * slope) + y_intercept )
 
       results = area_check(scan_coords)
       results = results.select { |park| !@found_parks.include?(park) }
@@ -51,18 +60,18 @@ class TripGeneration
       @found_parks += results
 
       if slope >= 0
-        scan_coords["lng"] += ( (run / hypotenuse.ceil).round(3) )
+        scan_coords["lng"] += ( (run / hypotenuse.ceil) )
       else
-        scan_coords["lng"] += ( (run / hypotenuse.ceil).round(3) )
+        scan_coords["lng"] += ( (run / hypotenuse.ceil) )
       end
     end
-
-    @found_parks.delete(@destination)
-    return @found_parks#.uniq
+    return @found_parks
   end
 
-  # This method returns a list of parks that exist within the bounds
-  # pass in coords hash {"lat" => y, "lng" => x}
+  # This method returns a list of parks that exist within boundary of the
+  # passed in coordinates. Because the United States covers a wide area,
+  # the range differs slightly to give more leeway to longitude, and more closely
+  # resemble a square area. This translate to roughly 100-110 mile search radius.
   def area_check(coords)
     return Park.all.where(drivable: true).select { |park|
       ((coords["lat"] - 1.1)..(coords["lat"] + 1.1)).include?(park.latitude) && (coords["lng"] - 1.3..coords["lng"] + 1.3).include?(park.longitude)
@@ -81,11 +90,11 @@ class TripGeneration
   end
 
   def trigonometry(start_coords, end_coords)
-    rise        = (end_coords["lat"] - start_coords["lat"]).round(3)
-    run         = (end_coords["lng"] - start_coords["lng"]).round(3)
-    hypotenuse  = (Math.sqrt( (rise ** 2) + (run ** 2) )).round(3)
-    slope       = (rise / run).round(3)
-    y_intercept = ( start_coords["lat"] - (start_coords["lng"] * slope) ).round(3)
+    rise        = (end_coords["lat"] - start_coords["lat"])
+    run         = (end_coords["lng"] - start_coords["lng"])
+    hypotenuse  = (Math.sqrt( (rise ** 2) + (run ** 2) ))
+    slope       = (rise / run)
+    y_intercept = ( start_coords["lat"] - (start_coords["lng"] * slope) )
     return [rise, run, hypotenuse, slope, y_intercept]
   end
 
