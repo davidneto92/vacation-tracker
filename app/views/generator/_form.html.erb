@@ -9,14 +9,14 @@
     </div>
 
     <div class="medium-5 columns">
-      <label>Destination in the Lower 48 - <%= link_to "Why only these locations?" %>
-        <%= select_tag "destination", options_for_select(@park_list.collect{ |park| [park.full_name, park.id] }) %>
+      <label>Destination in the Lower 48 - <%= link_to "Why only these locations?", generator_path %>
+        <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
       </label>
     </div>
 
     <div class="medium-2 columns">
       <label>Trip Duration (# of days)
-        <input type="number" name="duration"></input>
+        <input type="number" name="duration" placeholder="(optional)"></input>
       </label>
     </div>
   </div>

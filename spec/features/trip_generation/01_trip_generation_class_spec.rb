@@ -38,9 +38,9 @@ describe "trip generator finds parks along a route" do
       {"lat" => new_trip.start_point_coords["lat"], "lng" => new_trip.start_point_coords["lng"]}
     )
 
-    expect(found_parks.include?(@park_01)).to eq true
-    expect(found_parks.include?(@park_02)).to eq true
-    expect(found_parks.include?(@park_04)).to eq false
+    expect(new_trip.found_parks.include?(@park_01)).to eq true
+    expect(new_trip.found_parks.include?(@park_02)).to eq true
+    expect(new_trip.found_parks.include?(@park_04)).to eq false
   end
 
   it "#proximity_sort correctly sorts found parks by their distance to the scan point" do

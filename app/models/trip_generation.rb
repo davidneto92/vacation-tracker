@@ -6,7 +6,7 @@ class TripGeneration
     @destination = Park.find(params[:destination])
     @directions_data = parse_directions(params[:start_point])
     @start_point = {
-      "address" => @directions_data["routes"].first["legs"].first["start_location"],
+      "address" => @directions_data["routes"].first["legs"].first["start_address"],
       "coords" => @directions_data["routes"].first["legs"].first["start_location"]
     }
     @duration = params[:duration].to_i
@@ -68,6 +68,7 @@ class TripGeneration
     }
   end
 
+  # This method sorts the found locations by their proximity to the scan point.
   def proximity_sort(scan_coords, results)
     sorted_results = []
     results.each do |park|
