@@ -38,4 +38,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # api for all parks
+  namespace :api do
+    namespace :v1 do
+      resources :parks, only: [:index]
+    end
+  end
+
 end

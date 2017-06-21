@@ -9,3 +9,16 @@
     <li><%= park.full_name %></li>
   <% end %>
 </ul>
+
+<p>For more detailed and adjustable directions, <%= link_to "view this route on Google Maps.", "#{@directions_link}", target: :_blank %></p>
+<br>
+
+<div id="map">
+  <%= javascript_tag do %>
+    var start_point_json = <%=raw @start_point_json %>;
+    var found_parks_json = <%=raw @found_parks_json %>;
+  <% end %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initGeneratorMap" %>
+</div>
+
+<br>

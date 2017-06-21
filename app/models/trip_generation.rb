@@ -64,7 +64,7 @@ class TripGeneration
   # This translate to a roughly 100-110 mile search radius.
   def area_check(coords)
     return Park.all.where(drivable: true).select { |park|
-      ((coords["lat"] - 1.1)..(coords["lat"] + 1.1)).include?(park.latitude) && (coords["lng"] - 1.3..coords["lng"] + 1.3).include?(park.longitude)
+      ((coords["lat"] - 1.1)..(coords["lat"] + 1.1)).include?(park.latitude) && (coords["lng"] - 1.2..coords["lng"] + 1.2).include?(park.longitude)
     }
   end
 
@@ -89,6 +89,15 @@ class TripGeneration
     return [rise, run, hypotenuse, slope, y_intercept]
   end
 
+  def directions_link
+    link = "https://www.google.com/maps/dir/"
+    link += "#{URI.encode(self.start_point_name)}/"
+    @found_parks.each do |park|
+      link += "#{URI.encode(park.full_name)}/"
+    end
+    link += "#{URI.encode(@destination.full_name)}"
+    return link
+  end
 
   private
 
