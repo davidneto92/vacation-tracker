@@ -4,11 +4,32 @@
   the following locations may be on your way:
 </p>
 
-<ul>
-  <% @found_parks.each do |park| %>
-    <li><%= park.full_name %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th width="15">#</th>
+      <th width="500">Park</th>
+      <th width="250">Location</th>
+      <th width="250">Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @found_parks.each_with_index do |park, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= link_to "#{park.full_name}", park_path(park) %></td>
+      <td><%= park.state %></td>
+      <td id="<%= "#{index}_placeholder" %>"></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><strong>Total</strong></td>
+      <td id="<%= "total_placeholder" %>"></td>
+    </tr>
+  </tbody>
+</table>
 
 <p>For more detailed and adjustable directions, <%= link_to "view this route on Google Maps.", "#{@directions_link}", target: :_blank %></p>
 <br>

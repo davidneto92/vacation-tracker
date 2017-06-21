@@ -7,19 +7,25 @@
         <input id="autocomplete" placeholder="Starting Point" onFocus="geolocate()" type="text" name="start_point"></input>
       </label>
     </div>
+  </div>
 
+  <div class="row">
     <div class="medium-5 columns">
       <label>Destination in the Lower 48 - <%= link_to "Why only these locations?", generator_path %>
         <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
       </label>
     </div>
+  </div>
 
+
+
+  <!-- <div class="row">
     <div class="medium-2 columns">
       <label>Trip Duration (# of days)
         <input type="number" name="duration" placeholder="(optional)"></input>
       </label>
     </div>
-  </div>
+  </div> -->
 
   <input type="submit" value="Generate">
 </form>

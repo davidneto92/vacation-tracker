@@ -56,6 +56,19 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, markerLi
     if (status === 'OK') {
       directionsDisplay.setDirections(response);
       var route = response.routes[0];
+      calculateAndDisplayDistances(route);
     }
   });
+}
+
+function calculateAndDisplayDistances(route) {
+  var totalDistance = 0;
+  $.each(route.legs, function (x, leg) {
+    distanceDisplay = document.getElementById(x + '_placeholder');
+    distanceDisplay.innerHTML += Math.round(leg.distance.value * 0.000621371) + ' mi';
+    totalDistance += leg.distance.value;
+  });
+  totalDistance = Math.round(totalDistance * 0.000621371);
+  totalDisplay = document.getElementById('total_placeholder');
+  totalDisplay.innerHTML += totalDistance + ' mi';
 }
