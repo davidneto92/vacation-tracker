@@ -26,7 +26,8 @@ describe "trip generator page displays correct results" do
 
     expect(page).to_not have_content("Please specify a Starting Point.")
     expect(page).to have_content("On your trip from El Paso, TX, USA to Big Bend National Park")
-    expect(page).to have_content("Guadalupe Mountains National Park Carlsbad Caverns National Park")
+    expect(page).to have_content("Guadalupe Mountains National Park")
+    expect(page).to have_content("Carlsbad Caverns National Park")
   end
 
 end

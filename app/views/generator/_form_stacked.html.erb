@@ -1,0 +1,46 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_PLACES_KEY'] %>&libraries=places&callback=initAutocomplete" async defer></script>
+
+<div class="medium-5 columns">
+  <form action="generator/results">
+    <div id="locationField" class="row">
+      <label>Starting Point
+        <input id="autocomplete" placeholder="Starting Point" onFocus="geolocate()" type="text" name="start_point"></input>
+      </label>
+    </div>
+
+    <div class="row">
+      <label>Destination in the Lower 48 - <%= link_to "Why only these locations?", generator_path %>
+        <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
+      </label>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Generate">
+    </div>
+  </form>
+</div>
+
+<div class="medium-1 columns">
+  <div class="row">
+    <p><!-- This is a place holder to add space between the two sections --></p>
+  </div>
+</div>
+
+<div class="medium-5 columns">
+  <div class="row">
+    <p>
+      To generate a route, enter your starting location and select a park you would like to visit.
+      <br><br>
+      Please note that not all of the National Parks are can be driven to, and therefore are omitted from this list.
+      To see a list of parks that can and cannot be driven to, please visit the <%= link_to "parks page", parks_path %>.
+    </p>
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="medium-2 columns">
+    <label>Trip Duration (# of days)
+      <input type="number" name="duration" placeholder="(optional)"></input>
+    </label>
+  </div>
+</div> -->

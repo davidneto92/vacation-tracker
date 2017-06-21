@@ -1,3 +1,7 @@
+# NPS.gov has an API for all it's 523 locations. However, it is still
+# in beta. Once other parts of the site are improved, I can look at
+# using their API to full flesh out the database.
+
 Park.create(
   name: "Acadia",
   state: "Maine",
