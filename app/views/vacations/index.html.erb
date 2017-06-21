@@ -1,32 +1,34 @@
-<h1>All Logged Vacations</h1>
+<div class="row">
+  <h1>All Logged Vacations</h1>
 
-<% if current_user %>
-  <%= link_to "Create a new vacation", new_vacation_path %>
-<% end %>
+  <% if current_user %>
+    <%= link_to "Create a new vacation", new_vacation_path %>
+  <% end %>
 
-<br><br>
+  <br><br>
 
-<table>
-  <thead>
-    <tr>
-      <th width="500">Vacation Name</th>
-      <th width="250">Location</th>
-      <th width="250">Dates</th>
-      <% if current_user %>
-        <th width="250">Submitted by</th>
+  <table>
+    <thead>
+      <tr>
+        <th width="500">Vacation Name</th>
+        <th width="250">Location</th>
+        <th width="250">Dates</th>
+        <% if current_user %>
+          <th width="250">Submitted by</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vacations.each do |vacation| %>
+      <tr>
+        <td><%= link_to "#{vacation.name}", vacation_path(vacation) %></td>
+        <td><%= vacation.location %></td>
+        <td><%= vacation.text_dates %></td>
+        <% if current_user %>
+          <td><%= link_to "#{vacation.user.name}", user_path(vacation.user) %></td>
+        <% end %>
+      </tr>
       <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @vacations.each do |vacation| %>
-    <tr>
-      <td><%= link_to "#{vacation.name}", vacation_path(vacation) %></td>
-      <td><%= vacation.location %></td>
-      <td><%= vacation.text_dates %></td>
-      <% if current_user %>
-        <td><%= link_to "#{vacation.user.name}", user_path(vacation.user) %></td>
-      <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

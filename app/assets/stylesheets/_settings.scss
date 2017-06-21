@@ -618,3 +618,25 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
+
+
+// Homepage hero
+// -----------
+
+$hero-height: 60vh;
+
+.hero-section {
+  // default https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg
+  background: url('https://s3.amazonaws.com/vacation-tracker/support/mountains-hero.jpg') 50% no-repeat;
+  background-size: cover;
+  height: $hero-height;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hero-section-text {
+    color: $white;
+    text-shadow: 1px 1px 2px $black;
+  }
+}

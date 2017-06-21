@@ -1,11 +1,13 @@
-<h1><%= @park.name %></h1>
+<div class="row">
+  <h1><%= @park.name %></h1>
 
-<ul>
-  <li>Official page: <%= link_to "#{@park.nps_url}", "#{@park.nps_url}", target: :_blank %></li>
-  <li>Type: <%= @park.park_type %></li>
-  <li>Location: <%= @park.state %></li>
-  <li>Reachable by car: <%= @drivable %></li>
-  <% if @drivable == "Yes" %>
-    <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
-  <% end %>
-</ul>
+  <ul>
+    <li>Official page: <%= link_to "#{@park.nps_url}", "#{@park.nps_url}", target: :_blank %></li>
+    <li>Type: <%= @park.park_type %></li>
+    <li>Location: <%= @park.state %></li>
+    <li>Reachable by car: <%= @drivable %></li>
+    <% if @drivable == "Yes" %>
+      <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
+    <% end %>
+  </ul>
+</div>
