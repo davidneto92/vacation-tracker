@@ -3,13 +3,13 @@
     <h1>Vacation Tracker</h1>
     <p class="lead">Track and discover trips to America's Best Idea</p>
     <%= link_to "Log your Vacation", vacations_path, class: "button large" %>
-    <a href="#" class="button large hollow">Generate a Trip</a>
+    <%= link_to "Generate a Trip", generator_path, class: "button large hollow" %>
   </div>
 </div>
 
 <div class="row">
   <div class="medium-6 columns medium-push-6">
-    <img class="thumbnail" src="https://placehold.it/750x350">
+    <img class="thumbnail" src="https://s3.amazonaws.com/vacation-tracker/support/home_picture.jpg">
   </div>
   <div class="medium-6 columns medium-pull-6">
     <h2>Stay on target.</h2>
@@ -25,11 +25,11 @@
   </div>
   <div class="medium-4 columns">
     <h3>Map Your Trips</h3>
-    <p>With the click of a button, a custom Google map will be created to pinpoint where you've ventured to.</p>
+    <p>Custom Google maps are generated to pinpoint where you've ventured to. Maps can also be exported into Google My Maps for greater customization.</p>
   </div>
   <div class="medium-4 columns">
     <h3>Find New Destinations</h3>
-    <p>Want to make the most of your upcoming trip? The trip generator will search near your destination to help you find nearby wonders and sights.</p>
+    <p>Want to make the most of your upcoming trip? The Trip Generator will assist in helping you find nearby wonders and sights.</p>
   </div>
 </div>
 
