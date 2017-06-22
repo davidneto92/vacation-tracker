@@ -1,3 +1,5 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_PLACES_KEY'] %>&libraries=places&callback=initAutocomplete" async defer></script>
+
 <%= form_for(@vacation) do |f| %>
   <% if @vacation.errors.any? %>
     <div id="new-vacation-error">
@@ -14,7 +16,7 @@
   <%= f.label :name, "Vacation Name" %>
   <%= f.text_field :name %>
   <%= f.label :location, "Location" %>
-  <%= f.text_field :location %>
+  <%= f.text_field :location, id: "autocomplete" %>
 
   <%= f.label :description, "Description (optional)" %>
   <%= f.text_area :description %><br>

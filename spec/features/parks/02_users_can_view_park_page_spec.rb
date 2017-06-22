@@ -11,6 +11,7 @@ feature "users view a page for each park" do
     expect(page).to have_content(park_01.name)
     expect(page).to have_content(park_01.state)
     expect(page).to have_content("Type: #{park_01.park_type}")
+    expect(page).to have_link("Directions to #{park_01.name}")
   end
 
   pending "show page lists nearby parks listed"

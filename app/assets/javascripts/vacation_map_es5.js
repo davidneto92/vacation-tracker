@@ -54,4 +54,26 @@ function initVacationMap() {
       }
     }
   });
+
+  var geocoder = new google.maps.Geocoder();
+  geocodeVacationLocation(geocoder, map);
+  // setMapBounds();
+}
+
+function geocodeVacationLocation(geocoder, resultsMap) {
+  geocoder.geocode({'address': vacation_location}, function(results, status) {
+    if (status === 'OK') {
+      // resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+function setMapBounds(map, markerList) {
+  // need to have map bounds account for start location
 }

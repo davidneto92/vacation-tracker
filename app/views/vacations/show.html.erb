@@ -42,6 +42,7 @@
     <div id="map">
 
       <%= javascript_tag do %>
+        window.vacation_location = '<%= @vacation.location %>';
         window.vacation_id = <%= @vacation.id %>;
         window.map_center = <%= @map_center %>;
       <% end %>
