@@ -1,38 +1,41 @@
-<div class="callout large">
-  <div class="row column text-center">
+<div class="hero-section">
+  <div class="hero-section-text">
     <h1>Vacation Tracker</h1>
-    <p class="lead">Track and discover trips to America's Best Idea</p>
+    <h5>Track and discover trips to America's Best Idea</h5>
     <%= link_to "Log your Vacation", vacations_path, class: "button large" %>
-    <%= link_to "Generate a Trip", generator_path, class: "button large hollow" %>
+    <%= link_to "Generate a Trip", generator_path, class: "button large secondary" %>
   </div>
 </div>
 
 <div class="row">
-  <div class="medium-6 columns medium-push-6">
-    <img class="thumbnail" src="https://s3.amazonaws.com/vacation-tracker/support/home_picture.jpg">
+  <br>
+  <div class="row">
+    <div class="medium-6 columns medium-push-6">
+      <h2>Stay on target.</h2>
+      <p>In keeping with my goal to visit all of the US National Parks, this application is intended to monitor progress in this endeavor.
+        With a Google account, users may use these tools to track their visits, map them out, and find places that they have yet to discover.</p>
+    </div>
+    <div class="medium-6 columns medium-pull-6">
+      <img class="thumbnail" src="https://s3.amazonaws.com/vacation-tracker/support/home_block_03.jpg">
+    </div>
   </div>
-  <div class="medium-6 columns medium-pull-6">
-    <h2>Stay on target.</h2>
-    <p>In keeping with my goal to visit all of the US National Parks, this application is intended to monitor my progress in this endeavor.
-      With a Google account, users may use these tools to track their visits, map them out, and find places to see that they may have overlooked.</p>
-  </div>
-</div>
 
-<div class="row">
-  <div class="medium-4 columns">
-    <h3>Track Your Progress</h3>
-    <p>Create a running log of the trips you've been on throughout the United States. Log your vacations and individual visits to each park, memorial, or monument.</p>
+  <div class="row">
+    <div class="medium-4 columns">
+      <h3>Track Your Progress</h3>
+      <p>Create a running log of the trips you've been on throughout the United States. Log your vacations and individual visits to each park, memorial, or monument.</p>
+    </div>
+    <div class="medium-4 columns">
+      <h3>Map Your Trips</h3>
+      <p>Custom Google maps are generated to pinpoint where you've ventured to. Maps can also be exported into Google My Maps for greater customization.</p>
+    </div>
+    <div class="medium-4 columns">
+      <h3>Find New Destinations</h3>
+      <p>Want to make the most of your upcoming trip? The Trip Generator will assist in helping you find nearby wonders and sights.</p>
+    </div>
   </div>
-  <div class="medium-4 columns">
-    <h3>Map Your Trips</h3>
-    <p>Custom Google maps are generated to pinpoint where you've ventured to. Maps can also be exported into Google My Maps for greater customization.</p>
-  </div>
-  <div class="medium-4 columns">
-    <h3>Find New Destinations</h3>
-    <p>Want to make the most of your upcoming trip? The Trip Generator will assist in helping you find nearby wonders and sights.</p>
-  </div>
-</div>
 
-<hr>
-  <%= render "site_stats" %>
-<hr>
+  <hr>
+    <%= render "site_stats" %>
+  <hr>
+</div>

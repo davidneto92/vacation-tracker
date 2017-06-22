@@ -28,6 +28,9 @@ describe "trip generator page displays correct results" do
     expect(page).to have_content("On your trip from El Paso, TX, USA to Big Bend National Park")
     expect(page).to have_content("Guadalupe Mountains National Park")
     expect(page).to have_content("Carlsbad Caverns National Park")
+    expect(page).to have_content(@park_02.state)
+    expect(page).to have_content(@park_03.state)
+    expect(page).to_not have_content("Arches National Park")
   end
 
 end

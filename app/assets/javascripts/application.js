@@ -15,4 +15,7 @@
 //= require foundation
 //= require_tree .
 
+//= require jquery-tablesorter
+//= require jquery.tablesorter.js
+
 $(function(){ $(document).foundation(); });

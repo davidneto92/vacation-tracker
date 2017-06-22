@@ -1,63 +1,65 @@
-<h1>Profile for <%= @user.name %></h1>
+<div class="row">
+  <h1>Profile for <%= @user.name %></h1>
 
-<% if current_user.id == @user.id %>
-  <%= link_to "Account Management", edit_user_path(@user) %>
-<% end %>
-
-<% if @vacations %>
-  <h3>Vacations</h3>
-  <table>
-    <thead>
-      <tr>
-        <th width="450">Vacation Name</th>
-        <th width="250">Location</th>
-        <th width="300">Dates</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @vacations.each do |vacation| %>
-      <tr>
-        <td><%= link_to "#{vacation.name}", vacation_path(vacation) %></td>
-        <td><%= vacation.location %></td>
-        <td><%= vacation.text_dates %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
-
-<br>
-
-<h3>Map of Visited Parks</h3>
-<div id="map">
-  <%= javascript_tag do %>
-    window.user_id = <%= @user.id %>;
-  <% end %>
-  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initUserMap" %>
-</div>
-<br>
-
-<% if (current_user == @user) %>
-  <%= javascript_tag do %>
-    window.download_path = '<%=@download_path%>';
+  <% if current_user.id == @user.id %>
+    <%= link_to "Account Management", edit_user_path(@user) %>
   <% end %>
 
-  <div id="download-area" class="row">
-    <div id="download-link-area" class="column large-4 text-center">
-      <%= link_to "Export this map to Google My Maps", user_user_visits_download_path(@user), class: "button", id: "map-download-button" %>
-    </div>
-
-    <div id="download-instructions" class="column large-8">
-      <h5>How to edit this map in Google My Maps</h5>
-      <ol>
-        <li>Click the button above to generate the download link.</li>
-        <li>Download the .kml file (click to download or right-click and save).</li>
-        <li>Head to the Google <a href="https://www.google.com/maps/d/u/0/" target="_blank">My Maps</a> page.</li>
-        <li>Click the "+Create A New Map" button.</li>
-        <li>Click the blue Import button within the layer to upload the map data.</li>
-      </ol>
-    </div>
-  </div>
+  <% if @vacations %>
+    <h3>Vacations</h3>
+    <table>
+      <thead>
+        <tr>
+          <th width="450">Vacation Name</th>
+          <th width="250">Location</th>
+          <th width="300">Dates</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vacations.each do |vacation| %>
+        <tr>
+          <td><%= link_to "#{vacation.name}", vacation_path(vacation) %></td>
+          <td><%= vacation.location %></td>
+          <td><%= vacation.text_dates %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 
   <br>
-<% end %>
+
+  <h3>Map of Visited Parks</h3>
+  <div id="map">
+    <%= javascript_tag do %>
+      window.user_id = <%= @user.id %>;
+    <% end %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initUserMap" %>
+  </div>
+  <br>
+
+  <% if (current_user == @user) %>
+    <%= javascript_tag do %>
+      window.download_path = '<%=@download_path%>';
+    <% end %>
+
+    <div id="download-area" class="row">
+      <div id="download-link-area" class="column large-4 text-center">
+        <%= link_to "Export this map to Google My Maps", user_user_visits_download_path(@user), class: "button", id: "map-download-button" %>
+      </div>
+
+      <div id="download-instructions" class="column large-8">
+        <h5>How to edit this map in Google My Maps</h5>
+        <ol>
+          <li>Click the button above to generate the download link.</li>
+          <li>Download the .kml file (click to download or right-click and save).</li>
+          <li>Head to the Google <a href="https://www.google.com/maps/d/u/0/" target="_blank">My Maps</a> page.</li>
+          <li>Click the "+Create A New Map" button.</li>
+          <li>Click the blue Import button within the layer to upload the map data.</li>
+        </ol>
+      </div>
+    </div>
+
+    <br>
+  <% end %>
+</div>
