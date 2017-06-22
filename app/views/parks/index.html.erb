@@ -1,9 +1,32 @@
 <div class="row">
   <h1>All National Parks</h1>
 
-  <ul>
-    <% @parks.each do |park| %>
-      <li><%= link_to "#{park.full_name}", park_path(park) %>, <%= park.state_abbreviation %></li>
-    <% end %>
-  </ul>
+  <table id="parksTable" class="tablesorter">
+    <thead>
+
+      <tr>
+        <th width="250">Name</th>
+        <th width="150">Type</th>
+        <th width="250">Location</th>
+        <th width="100">Reachable by Car?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @parks.each do |park| %>
+      <tr>
+        <td><%= link_to "#{park.name}", park_path(park) %></td>
+        <td><%= park.park_type %></td>
+        <td><%= park.state %></td>
+        <td>
+          <% if park.drivable == true %>
+            Yes
+          <% else %>
+            No
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>
