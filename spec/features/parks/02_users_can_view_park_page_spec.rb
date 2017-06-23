@@ -14,6 +14,15 @@ feature "users view a page for each park" do
     expect(page).to have_link("Directions to #{park_01.name}")
   end
 
+  scenario "users can return to the park index from the show page" do
+    park_01 = FactoryGirl.create(:park)
+    visit "/parks/#{park_01.id}"
+
+    click_link "Back to all parks"
+    expect(page).to have_content("All National Parks")
+  end
+
+
   pending "show page lists nearby parks listed"
 
 end
