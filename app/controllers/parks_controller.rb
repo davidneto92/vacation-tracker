@@ -7,6 +7,7 @@ class ParksController < ApplicationController
       @drivable = "No"
     end
     @vacations = @park.vacations.where(display_public: true)
+    @visit_count = @park.visits.length
   end
 
   def index
