@@ -8,7 +8,7 @@ feature "users create a vacation" do
     visit "/vacations/new"
 
     fill_in "Vacation Name", with: "Recent Trip to Utah"
-    fill_in "Location", with: "Salt Lake City and Moab"
+    fill_in "vacation[location]", with: "Salt Lake City and Moab"
     select "2017", from: "vacation[start_date(1i)]"
     select "April", from: "vacation[start_date(2i)]"
     select "6", from: "vacation[start_date(3i)]"
@@ -33,7 +33,7 @@ feature "users create a vacation" do
     visit "/vacations/new"
 
     fill_in "Vacation Name", with: "Fun times in Florida"
-    fill_in "Location", with: "Everglades and Miami"
+    fill_in "vacation[location]", with: "Everglades and Miami"
     fill_in "Description", with: "My friends and I made it to the Everglades and then Biscayne on the final day. Lot of fun!"
     select "2015", from: "vacation[start_date(1i)]"
     select "June", from: "vacation[start_date(2i)]"
@@ -76,7 +76,7 @@ feature "users create a vacation" do
     visit "/vacations/new"
 
     fill_in "Vacation Name", with: "Recent Trip to Utah"
-    fill_in "Location", with: "Salt Lake City and Moab"
+    fill_in "vacation[location]", with: "Salt Lake City and Moab"
     select "2016", from: "vacation[start_date(1i)]"
     select "August", from: "vacation[start_date(2i)]"
     select "15", from: "vacation[start_date(3i)]"

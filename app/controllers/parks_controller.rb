@@ -6,6 +6,7 @@ class ParksController < ApplicationController
     else
       @drivable = "No"
     end
+    @vacations = @park.vacations
   end
 
   def index
