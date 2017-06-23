@@ -12,4 +12,10 @@
       <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
     <% end %>
   </ul>
+
+  <ul>Recent Vacations
+    <% @vacations.each do |vacation| %>
+      <li><%= link_to "#{vacation.name}", vacation_path(vacation) %></li>
+    <% end %>
+  </ul>
 </div>

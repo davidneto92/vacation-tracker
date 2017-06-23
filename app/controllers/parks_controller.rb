@@ -6,7 +6,7 @@ class ParksController < ApplicationController
     else
       @drivable = "No"
     end
-    @vacations = @park.vacations
+    @vacations = @park.vacations.where(display_public: true)
   end
 
   def index
