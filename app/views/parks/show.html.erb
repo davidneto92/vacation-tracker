@@ -1,14 +1,36 @@
 <div class="row">
   <%= link_to "Back to all parks", parks_path %>
-  <h1><%= @park.name %></h1>
+  <br>
+  <h2><%= @park.full_name %></h2>
 
-  <ul>
-    <li>Official page: <%= link_to "#{@park.nps_url}", "#{@park.nps_url}", target: :_blank %></li>
-    <li>Type: <%= @park.park_type %></li>
-    <li>Location: <%= @park.state %></li>
-    <li>Reachable by car: <%= @drivable %></li>
-    <% if @drivable == "Yes" %>
-      <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
-    <% end %>
-  </ul>
+  <div class="columns medium-6">
+
+    <ul>
+      <li>Official page: <%= link_to "#{@park.nps_url}", "#{@park.nps_url}", target: :_blank %></li>
+      <li>Designation: <%= @park.park_type %></li>
+      <li>Location: <%= @park.state %></li>
+      <li>Reachable by car: <%= @drivable %></li>
+      <% if @drivable == "Yes" %>
+        <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
+      <% end %>
+    </ul>
+
+    <div class="columns medium-8">
+      <h5>Recent Vacations</h5>
+      <ul>
+        <% @vacations.each do |vacation| %>
+          <li><%= link_to "#{vacation.name}", vacation_path(vacation) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="columns medium-4">
+      <h5>Total user visits: <%= @visit_count %></h5>
+    </div>
+
+  </div>
+
+  <div class="columns medium-6">
+    <iframe id="park-embed-map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_EMBED_KEY'] %>&q=<%= "#{@park.full_name}" %>" allowfullscreen></iframe>
+  </div>
+
 </div>

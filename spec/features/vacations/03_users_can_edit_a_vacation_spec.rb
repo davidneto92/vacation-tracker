@@ -22,7 +22,7 @@ feature "users can view vacations" do
 
     click_link "Edit this Vacation"
 
-    expect(find_field("Location").value).to eq "#{vacation_01.location}"
+    expect(find_field("vacation[location]").value).to eq "#{vacation_01.location}"
     expect(find_field("Vacation Name").value).to eq "#{vacation_01.name}"
 
     fill_in "Vacation Name", with: "An even better name!"
