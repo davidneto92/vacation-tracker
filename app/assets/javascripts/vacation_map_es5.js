@@ -75,9 +75,6 @@ function geocodeVacationLocation(geocoder, map) {
 }
 
 function setMapBounds(map, bounds) {
-  // prevents excessive zoom if there is only 1 visit
-  if (markerList.length > 1) {
-    map.fitBounds(bounds);
-    map.panToBounds(bounds);
-  }
+  map.fitBounds(bounds);
+  map.panToBounds(bounds);
 }
