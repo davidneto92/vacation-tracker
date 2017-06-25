@@ -1,6 +1,6 @@
 # NOTE: Coordinates format: {"lat" => y, "lng" => x}
 class TripGeneration
-  attr_accessor :destination, :start_point, :duration, :found_parks, :directions_data
+  attr_accessor :destination, :start_point, :found_parks, :directions_data #, :duration
 
   def initialize(params)
     @destination = Park.find(params[:destination])
@@ -9,7 +9,7 @@ class TripGeneration
       "address" => @directions_data["routes"].first["legs"].first["start_address"],
       "coords" => @directions_data["routes"].first["legs"].first["start_location"]
     }
-    @duration = params[:duration].to_i
+    # @duration = params[:duration].to_i # duration not used yet
     @found_parks = []
   end
 
@@ -20,6 +20,14 @@ class TripGeneration
   def start_point_name
     @start_point["address"]
   end
+
+  # def start_point_state
+  #   start_point_name.split(",")[-2]
+  # end
+  #
+  # def start_point_city
+  #   start_point_name.split(",")[-3]
+  # end
 
   # This method walks through each step of a route to perform a line_scan
   def route_trace
