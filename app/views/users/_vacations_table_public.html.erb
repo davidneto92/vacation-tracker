@@ -1,0 +1,21 @@
+<h3>Vacations</h3>
+<div class="user-vacations-table">
+  <table>
+    <thead>
+      <tr>
+        <th width="450">Vacation Name</th>
+        <th width="250">Location</th>
+        <th width="300">Dates</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vacations.each do |vacation| %>
+      <tr>
+        <td><%= link_to "#{vacation.name}", vacation_path(vacation) %></td>
+        <td><%= vacation.location %></td>
+        <td><%= vacation.text_dates %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

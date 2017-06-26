@@ -12,12 +12,20 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if !@user.vacations.empty?
+
+    if current_user == @user
+      @vacations = @user.vacations
+      @private_table = true
+    else
       @vacations = @user.vacations.where(display_public: true)
+    end
+
+    if !@user.vacations.empty?
       @download_path = "https://s3.amazonaws.com/vacation-tracker/Visited_Parks_#{CURRENT_DATE}_#{@user.uid}.kml"
     else
       @download_path = "https://s3.amazonaws.com/vacation-tracker/blank_map_all_visits.kml"
     end
+
   end
 
   def edit
