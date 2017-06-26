@@ -3,13 +3,13 @@
 <div class="medium-5 columns">
   <form action="generator/results">
     <div id="locationField" class="row">
-      <label>Starting Point
+      <label>Starting Point - <button type="button" id="gpsButton" class="button small" disabled>My<br>Location</button>
         <input id="autocomplete" placeholder="Starting Point" type="text" name="start_point"></input>
       </label>
     </div>
 
     <div class="row">
-      <label>Destination in the Lower 48 - <%= link_to "Why only these locations?", generator_path %>
+      <label>Destination
         <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
       </label>
     </div>
