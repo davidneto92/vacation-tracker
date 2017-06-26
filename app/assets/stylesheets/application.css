@@ -53,11 +53,21 @@ body {
 }
 
 .alert {
-
+  text-align: center;
+  color: #e74c3c;
+  font-weight: bold;
+  padding: 0;
 }
 
 .notice {
+  text-align: center;
+  color: #72c06c;
+  font-weight: bold;
+  padding: 0;
+}
 
+.callout {
+  padding-top: 0;
 }
 
 #map {
@@ -70,6 +80,12 @@ body {
   height: 25em;
   width: 100%;
 }
+
+
+.user-vacations-table {
+  overflow-y: auto;
+  /* single row and header are 7em */
+  max-height: 21em;
 
 /* BUTTON STYLES */
 .button-badge {
