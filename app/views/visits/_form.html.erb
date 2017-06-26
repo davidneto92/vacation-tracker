@@ -13,6 +13,13 @@
     </div>
   <% end %>
 
+  <div id="gpsDiv" class="columns small-2">
+    <label>GPS</label>
+    <button type="button" id="parkFindButton" class="button radius button-badge" disabled>
+      <i class="fa fa-compass"></i>
+    </button>
+  </div>
+
   <%= f.label "Destination" %>
   <% if @visit.park.nil? %>
     <%= select_tag "park_id", options_from_collection_for_select(@park_list, "id", "full_name"), id: "park-visit-list" %><br>
