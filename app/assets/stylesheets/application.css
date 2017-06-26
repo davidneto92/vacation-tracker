@@ -70,3 +70,21 @@ body {
   height: 25em;
   width: 100%;
 }
+
+/* BUTTON STYLES */
+.button-badge {
+  position: relative;
+  border-radius: .2rem;
+  transition: all ease 0.4s;
+  text-decoration: none;
+  padding: 0.2rem 0.4rem;
+  font-size: 2rem;
+}
+
+.button-badge:hover {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fa {
+  color: white;
+}

@@ -1,46 +1,53 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_PLACES_KEY'] %>&libraries=places&callback=initAutocomplete" async defer></script>
 
-<div class="medium-5 columns">
+<div class="medium-6 columns">
+
   <form action="generator/results">
+
     <div id="locationField" class="row">
-      <label>Starting Point
-        <input id="autocomplete" placeholder="Starting Point" type="text" name="start_point"></input>
-      </label>
+      <div id="generator-autocomplete" class="columns small-10">
+        <label>Starting Point
+          <input id="autocomplete" placeholder="Starting Point" type="text" name="start_point"></input>
+        </label>
+      </div>
+
+      <div id="gpsDiv" class="columns small-2">
+        <label>GPS</label>
+        <!-- <button type="button" id="gpsButton" class="button" disabled>GPS</button> -->
+        <button type="button" id="gpsButton" class="button radius button-badge" disabled>
+          <i class="fa fa-compass"></i>
+        </button>
+      </div>
     </div>
 
     <div class="row">
-      <label>Destination in the Lower 48 - <%= link_to "Why only these locations?", generator_path %>
-        <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
-      </label>
+      <div class="columns small-12">
+        <label>Destination
+          <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
+        </label>
+      </div>
     </div>
 
     <div class="row">
-      <input type="submit" value="Generate">
+      <div class="columns small-12">
+        <input type="submit" value="Generate">
+        <br><br>
+      </div>
     </div>
+
   </form>
-</div>
 
-<div class="medium-1 columns">
-  <div class="row">
-    <p><!-- This is a place holder to add space between the two sections --></p>
-  </div>
 </div>
 
 <div class="medium-6 columns">
   <div class="row">
-    <p>
-      To generate a route, please enter your starting location and then select a park you would like to visit.
-      <br><br>
-      Please note that not all of the National Parks are can be driven to, and therefore are omitted from this list.
-      To see a list of parks that can and cannot be driven to, please visit the <%= link_to "parks page", parks_path %>.
-    </p>
+    <div class="small-12 columns">
+      <p>
+        To generate a route, please enter your starting location and then select a park you would like to visit.
+        <br><br>
+        Please note that not all of the National Parks are can be driven to, and therefore are omitted from this list.
+        To see a list of parks that can and cannot be driven to, please visit the <%= link_to "parks page", parks_path %>.
+      </p>
+    </div>
   </div>
 </div>
-
-<!-- <div class="row">
-  <div class="medium-2 columns">
-    <label>Trip Duration (# of days)
-      <input type="number" name="duration" placeholder="(optional)"></input>
-    </label>
-  </div>
-</div> -->
