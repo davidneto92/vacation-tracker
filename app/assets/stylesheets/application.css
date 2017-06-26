@@ -86,6 +86,7 @@ body {
   overflow-y: auto;
   /* single row and header are 7em */
   max-height: 21em;
+}
 
 /* BUTTON STYLES */
 .button-badge {
