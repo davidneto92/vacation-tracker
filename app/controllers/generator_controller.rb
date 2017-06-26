@@ -14,6 +14,8 @@ class GeneratorController < ApplicationController
       @found_parks = new_trip.route_trace
       @directions_link = new_trip.directions_link
 
+      @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
       @start_point_json = new_trip.start_point.to_json
       @found_parks_json = (@found_parks << @destination).to_json
     end
