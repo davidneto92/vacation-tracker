@@ -17,11 +17,11 @@ function geolocate() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      var circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy
-      });
-      autocomplete.setBounds(circle.getBounds());
+
+      // TODO :
+      // convert coodinates into string
+      // return string to be entered into fields
+
     });
   }
 }
