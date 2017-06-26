@@ -154,8 +154,7 @@ Park.create(
   park_type: "National Park",
   latitude: 63.115,
   longitude: -151.193,
-  nps_url: "https://www.nps.gov/dena/index.htm",
-  drivable: false
+  nps_url: "https://www.nps.gov/dena/index.htm"
 )
 
 Park.create(
@@ -516,8 +515,7 @@ Park.create(
   park_type: "National Park",
   latitude: 61.710,
   longitude: -142.986,
-  nps_url: "https://www.nps.gov/wrst/index.htm",
-  drivable: false
+  nps_url: "https://www.nps.gov/wrst/index.htm"
 )
 
 Park.create(
