@@ -30,4 +30,12 @@ class Visit < ApplicationRecord
     return "#{self.start_date.strftime "%B %e, %Y"} - #{self.end_date.strftime "%B %e, %Y"}"
   end
 
+  def start_date_display
+    return "#{self.start_date.strftime "%B %e, %Y"}"
+  end
+
+  def end_date_display
+    return "#{self.end_date.strftime "%B %e, %Y"}"
+  end
+
 end

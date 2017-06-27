@@ -15,7 +15,7 @@ feature "users can delete visits within a vacation" do
   scenario "users can delete a visit from their vacation" do
     visit "/vacations/#{@vacation.id}"
 
-    click_link "Delete Visit"
+    click_link "Delete"
 
     expect(page).to have_content "Visit to #{@park_01.full_name} deleted."
     expect(@vacation.visits.empty?).to eq true

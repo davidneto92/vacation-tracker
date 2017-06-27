@@ -1,5 +1,5 @@
 <div class="row">
-  <h1>Profile for <%= @user.name %></h1>
+  <h2>Profile for <%= @user.name %></h2>
 
   <% if current_user.id == @user.id %>
     <%= link_to "Account Management", edit_user_path(@user) %>

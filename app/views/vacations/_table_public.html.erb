@@ -1,0 +1,20 @@
+<div class="user-vacations-table">
+  <table>
+    <thead>
+      <tr>
+        <th width="300">Location</th>
+        <th width="140">Arrived</th>
+        <th width="140">Departed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @visits.each do |visit| %>
+      <tr>
+        <td><%= link_to "#{visit.park.full_name}", park_path(visit.park) %></td>
+        <td><%= visit.start_date_display %></td>
+        <td><%= visit.end_date_display %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

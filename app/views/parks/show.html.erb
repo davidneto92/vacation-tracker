@@ -1,36 +1,41 @@
 <div class="row">
-  <%= link_to "Back to all parks", parks_path %>
-  <br>
-  <h2><%= @park.full_name %></h2>
+  <div class="columns medium-12">
+    <%= link_to "Back to all parks", parks_path %>
+    <br>
+    <h2><%= @park.full_name %></h2>
+  </div>
+</div>
 
-  <div class="columns medium-6">
+<div class="row">
 
-    <ul>
-      <li>Official page: <%= link_to "#{@park.nps_url}", "#{@park.nps_url}", target: :_blank %></li>
-      <li>Designation: <%= @park.park_type %></li>
-      <li>Location: <%= @park.state %></li>
-      <li>Reachable by car: <%= @drivable %></li>
-      <% if @drivable == "Yes" %>
-        <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
-      <% end %>
-    </ul>
+    <div class="columns medium-6">
 
-    <div class="columns medium-8">
-      <h5>Recent Vacations</h5>
       <ul>
-        <% @vacations.each do |vacation| %>
-          <li><%= link_to "#{vacation.name}", vacation_path(vacation) %></li>
+        <li><strong>Official page:</strong> <%= link_to "#{@park.nps_url}", "#{@park.nps_url}", target: :_blank %></li>
+        <li><strong>Designation:</strong> <%= @park.park_type %></li>
+        <li><strong>Location:</strong> <%= @park.state %></li>
+        <li><strong>Reachable by car:</strong> <%= @drivable %></li>
+        <% if @drivable == "Yes" %>
+          <li><%= link_to "Directions to #{@park.name}", "https://www.google.com/maps/dir//#{@park.full_name}", target: :_blank %></li>
         <% end %>
       </ul>
-    </div>
-    <div class="columns medium-4">
-      <h5>Total user visits: <%= @visit_count %></h5>
+
+      <div class="columns medium-8">
+        <h5>Recent Vacations</h5>
+        <ul>
+          <% @vacations.each do |vacation| %>
+            <li><%= link_to "#{vacation.name}", vacation_path(vacation) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="columns medium-4">
+        <h5>Total user visits: <%= @visit_count %></h5>
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="columns medium-6">
-    <iframe id="park-embed-map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_EMBED_KEY'] %>&q=<%= "#{@park.full_name}" %>" allowfullscreen></iframe>
-  </div>
+    <div class="columns medium-6">
+      <iframe id="park-embed-map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_EMBED_KEY'] %>&q=<%= "#{@park.full_name}" %>" allowfullscreen></iframe>
+    </div>
 
 </div>

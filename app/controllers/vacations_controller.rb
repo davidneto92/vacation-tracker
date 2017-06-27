@@ -13,6 +13,9 @@ class VacationsController < ApplicationController
     if !@visits.empty?
       @map_center = @vacation.find_center
     end
+    if current_user == @vacation.user
+      @private_table = true
+    end
   end
 
   def new
