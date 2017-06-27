@@ -7,6 +7,7 @@ class Vacation < ApplicationRecord
   validates :name, :location, :start_date, :end_date, presence: true
   validates :name, length: { minimum: 5 }
   validates :display_public, inclusion: { in: [true, false], message: "- please select if this vacation should be publicly viewable" }
+  validates :description, length: { minimum: 20 }, allow_blank: true
   validate :vacation_has_happened
   validate :dates_acceptable
 

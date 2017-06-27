@@ -25,7 +25,8 @@ feature "users can add visits to vacations" do
 
     expect(page).to have_content("Visit added to #{vacation_01.name}.")
     expect(page).to have_link("Olympic National Park")
-    expect(page).to have_content("from April 7, 2016 - April 12, 2016")
+    expect(page).to have_content("April 7, 2016")
+    expect(page).to have_content("April 12, 2016")
     expect(vacation_01.visits.first.park.name).to eq "Olympic"
   end
 

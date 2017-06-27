@@ -22,7 +22,7 @@ feature "users create a vacation" do
     expect(page).to have_content("Vacation created!")
     expect(page).to have_content("Recent Trip to Utah")
     expect(page).to have_content("Location: Salt Lake City and Moab")
-    expect(page).to have_content("Vacation dates: April 6 - 11, 2017")
+    expect(page).to have_content("Vacation Dates: April 6, 2017 - April 11, 2017")
     expect(page).to have_content("By: #{User.last.name}")
   end
 
@@ -49,7 +49,7 @@ feature "users create a vacation" do
     expect(page).to have_content("Fun times in Florida")
     expect(page).to have_content("By: #{User.last.name}")
     expect(page).to have_content("Location: Everglades and Miami")
-    expect(page).to have_content("Vacation dates: June 2 - 5, 2015")
+    expect(page).to have_content("Vacation Dates: June 2, 2015 - June 5, 2015")
     expect(page).to have_content("Description: My friends and I made it to the Everglades and then Biscayne on the final day. Lot of fun!")
   end
 

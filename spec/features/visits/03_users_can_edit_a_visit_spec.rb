@@ -15,7 +15,7 @@ feature "users can edit visits within a vacation" do
   scenario "signed in user can edit a visit they created" do
     visit "/vacations/#{@vacation.id}"
 
-    click_link "Edit Visit"
+    click_link "Edit"
 
     select @park_02.full_name, from: "park-visit-list"
     select "2016", from: "visit[start_date(1i)]"
@@ -29,14 +29,15 @@ feature "users can edit visits within a vacation" do
 
     expect(page).to have_content("Visit updated!")
     expect(page).to have_link("#{@park_02.full_name}")
-    expect(page).to have_content("from May 4, 2016 - May 7, 2016")
+    expect(page).to have_content("May 4, 2016")
+    expect(page).to have_content("May 7, 2016")
     expect(@vacation.visits.first.park.name).to eq(@park_02.name)
   end
 
   scenario "visit edit fails if the dates conflict with its Vacation" do
     visit "/vacations/#{@vacation.id}"
 
-    click_link "Edit Visit"
+    click_link "Edit"
 
     select "2016", from: "visit[start_date(1i)]"
     select "April", from: "visit[start_date(2i)]"

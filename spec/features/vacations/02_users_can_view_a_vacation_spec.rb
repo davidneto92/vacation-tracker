@@ -23,7 +23,6 @@ feature "users can view vacations" do
 
     expect(page).to have_content("#{vacation_01.name}")
     expect(page).to have_content("Location: #{vacation_01.location}")
-    expect(page).to have_content("Vacation dates: April 19 - 25, 2016")
     expect(page).to have_content("By: #{user.name}")
   end
 

@@ -1,0 +1,25 @@
+<div class="user-vacations-table">
+  <table>
+    <thead>
+      <tr>
+        <th width="300">Location</th>
+        <th width="140">Arrived</th>
+        <th width="140">Departed</th>
+        <th width="50">Management</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @visits.each do |visit| %>
+      <tr>
+        <td><%= link_to "#{visit.park.full_name}", park_path(visit.park) %></td>
+        <td><%= visit.start_date_display %></td>
+        <td><%= visit.end_date_display %></td>
+        <td>
+          <%= link_to "Edit", edit_vacation_visit_path(@vacation, visit) %>
+          - <%= link_to "Delete", [@vacation, visit], data: { confirm: "Are you sure you want to delete this visit to #{visit.park.full_name}?" }, method: :delete %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

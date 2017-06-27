@@ -1,55 +1,60 @@
 <div class="row">
-  <h1>Vacation: <%= @vacation.name %></h1>
+  <div class="columns medium-12">
 
-  <% if current_user == @vacation.user %>
-    <%= link_to "Edit this Vacation", edit_vacation_path(@vacation) %> -
-    <%= link_to "Add a Visit", new_vacation_visit_path(@vacation) %>
-  <% end %>
+    <%= link_to "Back to all vacations", vacations_path %>
 
-  <h3>By:
-    <% if current_user %>
-      <%= link_to "#{@vacation.user.name}", user_path(@vacation.user) %>
-    <% else %>
-      <%= @vacation.user.name %>
-    <% end %>
-  </h3>
-
-  <br>
-
-  <div>
-    <p>Location: <%= @vacation.location %></p>
-    <p>Vacation dates: <%= @vacation.start_date.strftime "%B %e" %> - <%= @vacation.end_date.strftime "%e, %Y" %></li>
-    <% if @vacation.description != nil %>
-      <p>Description: <%= @vacation.description %></p>
-    <% end %>
-    <p>Visits:</p>
-      <ul>
-        <% @visits.each do |visit| %>
-          <li><%= link_to "#{visit.park.full_name}", park_path(visit.park) %>
-            <%= "from #{visit.text_dates}" %>
-            <% if current_user && current_user == @vacation.user %>
-             - <%= link_to "Edit Visit", edit_vacation_visit_path(@vacation, visit) %>
-             - <%= link_to "Delete Visit", [@vacation, visit], data: { confirm: "Are you sure you want to delete this visit to #{visit.park.full_name}?" }, method: :delete %>
-             <% end %>
-           </li>
-        <% end %>
-      </ul>
-  </div>
-
-
-  <% if @map_center %>
-    <h3>Map of Vacation</h3>
-    <div id="map">
-
-      <%= javascript_tag do %>
-        window.vacation_location = '<%= @vacation.location %>';
-        window.vacation_id = <%= @vacation.id %>;
-        window.map_center = <%= @map_center %>;
+    <h2>Vacation: <%= @vacation.name %></h2>
+    <h4>By:
+      <% if current_user %>
+        <%= link_to "#{@vacation.user.name}", user_path(@vacation.user) %>
+      <% else %>
+        <%= @vacation.user.name %>
       <% end %>
+    </h4>
+    <% if current_user == @vacation.user %>
+      <%= link_to "Edit this Vacation", edit_vacation_path(@vacation), class:"" %> -
+      <%= link_to "Add a Visit", new_vacation_visit_path(@vacation)  , class:"" %>
+    <% end %>
 
-      <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initVacationMap" %>
+  </div>
+</div>
 
-    </div>
-  <% end %>
-  <br>
+<div class="row">
+  <div class="columns small-12">
+    <strong>Location:</strong> <%= @vacation.location %><br>
+    <strong>Vacation Dates:</strong> <%= @vacation.text_dates %><br>
+    <% if !@vacation.description.empty? %>
+      <strong>Description:</strong> <%= @vacation.description %>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="columns small-12">
+    <% if @private_table %>
+      <%= render 'table_private' %>
+    <% else %>
+      <%= render 'table_public' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="columns medium-12">
+
+    <% if @map_center %>
+      <h3>Map of Vacation</h3>
+      <div id="map">
+        <%= javascript_tag do %>
+          window.vacation_location = '<%= @vacation.location %>';
+          window.vacation_id = <%= @vacation.id %>;
+          window.map_center = <%= @map_center %>;
+        <% end %>
+        <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_JAVASCRIPT_KEY']}&callback=initVacationMap" %>
+      </div>
+    <% end %>
+
+  </div>
 </div>

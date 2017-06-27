@@ -33,7 +33,7 @@ feature "users can view vacations" do
 
     expect(page).to have_content("Vacation has been updated.")
     expect(page).to have_content("An even better name!")
-    expect(page).to have_content("Vacation dates: April 22 - 28, 2016")
+    expect(page).to have_content("Vacation Dates: April 22, 2016 - April 28, 2016")
   end
 
   scenario "users cannot edit another user's vacation" do
