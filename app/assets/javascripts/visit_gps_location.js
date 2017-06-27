@@ -52,12 +52,15 @@ function displayFoundParks(foundParks) {
   buttonStartText = '<div class="row text-center"><div class="columns small-12"><span type="button" class="button expanded" ';
   buttonEndText   = '</span></div></div>';
 
+  resultsDisplay.innerHTML = '<p class="text-center">Found Park(s)</p>';
+
   if (foundParks.length > 0) {
+    MotionUI.animateIn(resultsDisplay, 'fade-in');
     $.each(foundParks, function (x, park) {
       resultsDisplay.innerHTML += (buttonStartText + 'id="result' + park.id + '">' + park.name + ' ' + park.park_type + buttonEndText);
     });
   } else {
-    resultsDisplay.innerHTML = 'No parks found near your location. Please try again';
+    resultsDisplay.innerHTML = '<p class="text-center">No parks found near your location. Please try again.</p>';
   }
 }
 
@@ -69,7 +72,7 @@ function tieButtonsToList(foundParks) {
     button.addEventListener("click", function(){
       dropdownList.selectedIndex = park.id - 1;
       resultsDisplay = document.getElementById('foundParksDiv');
-      resultsDisplay.innerHTML = '';
+      MotionUI.animateOut(resultsDisplay, 'fade-out');
     });
   });
 
