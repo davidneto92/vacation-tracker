@@ -1,40 +1,67 @@
-<h3>Vacation Dates: <%= @vacation.text_dates %></h3>
+<div class="columns medium-12">
+  <h3>Vacation Dates: <%= @vacation.text_dates %></h3>
+</div>
 
-<%= form_for([@vacation, @visit]) do |f| %>
+<div class="medium-6 columns">
+  <%= form_for([@vacation, @visit]) do |f| %>
 
-  <% if @visit.errors.any? %>
-    <div id="new-visit-error">
-      <h2><%= pluralize(@visit.errors.count, "error") %> prevented your visit from being saved:</h2>
-      <ul>
-        <% @visit.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+    <% if @visit.errors.any? %>
+      <div id="new-visit-error">
+        <h5><%= pluralize(@visit.errors.count, "error") %> prevented your visit from being saved:</h5>
+        <ul>
+          <% @visit.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="columns small-10">
+        <%= f.label "Destination" %>
+          <% if @visit.park.nil? %>
+        <%= select_tag "park_id", options_from_collection_for_select(@park_list, "id", "full_name"), id: "park-visit-list" %><br>
+        <% else %>
+          <%= select_tag "park_id", options_from_collection_for_select(@park_list, "id", "full_name", "#{@visit.park.id}"), id: "park-visit-list" %><br>
         <% end %>
-      </ul>
+      </div>
+
+      <div id="gpsDiv" class="columns small-2 text-right">
+        <label>GPS</label>
+        <button type="button" id="parkFindButton" class="button radius button-badge" disabled>
+          <i class="fa fa-compass"></i>
+        </button>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="columns small-6">
+        <%= f.label :start_date, "Visit Start Date" %>
+        <%= f.date_select :start_date, start_year: 1900, end_year: Time.now.year, default: @vacation.start_date %><br>
+      </div>
+      <div class="columns small-6">
+        <%= f.label :end_date, "Visit End Date" %>
+        <%= f.date_select :end_date, start_year: 1900, end_year: Time.now.year, default: @vacation.end_date %><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <br>
+        <%= f.submit "Create Visit", class: "button" %>
+      </div>
+    </div>
+
   <% end %>
+</div>
 
-  <div id="gpsDiv" class="columns small-2">
-    <label>GPS</label>
-    <button type="button" id="parkFindButton" class="button radius button-badge" disabled>
-      <i class="fa fa-compass"></i>
-    </button>
-  </div>
+<div class="medium-6 columns" id="foundParksDiv">
+  <br>
 
-  <%= f.label "Destination" %>
-  <% if @visit.park.nil? %>
-    <%= select_tag "park_id", options_from_collection_for_select(@park_list, "id", "full_name"), id: "park-visit-list" %><br>
-  <% else %>
-    <%= select_tag "park_id", options_from_collection_for_select(@park_list, "id", "full_name", "#{@visit.park.id}"), id: "park-visit-list" %><br>
-  <% end %>
+  <!-- <div class="row text-center">
+    <div class="columns small-12">
+      <span type="button" class="button expanded" id="result0">National Park #1</span>
+    </div>
+  </div> -->
 
-  <%= f.label :start_date, "Visit Start" %>
-  <%= f.date_select :start_date, start_year: 1900, end_year: Time.now.year, default: @vacation.start_date %><br>
-
-  <%= f.label :end_date, "Visit End" %>
-  <%= f.date_select :end_date, start_year: 1900, end_year: Time.now.year, default: @vacation.end_date %><br>
-
-  <br><br>
-  <%= f.submit "Create Visit" %>
-  <br><br>
-
-<% end %>
+</div>
