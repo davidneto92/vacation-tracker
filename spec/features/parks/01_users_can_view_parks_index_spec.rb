@@ -16,6 +16,4 @@ feature "users view pages about the parks" do
     expect(page).to have_content(park_02.state)
   end
 
-  pending "park index can be sorted?"
-  pending "park index is paginated?"
 end

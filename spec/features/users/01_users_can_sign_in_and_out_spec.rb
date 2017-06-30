@@ -22,6 +22,4 @@ feature "users can sign in with their Google account" do
     expect(page).to have_link("Sign in with Google")
   end
 
-  # scenario "user redirected to home page if there is an error logging in"
-
 end

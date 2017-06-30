@@ -30,12 +30,7 @@ feature "users can add visits to vacations" do
     expect(vacation_01.visits.first.park.name).to eq "Olympic"
   end
 
-  # currently no way not to select a park when creating a visit
-  # scenario "visits not created if user does not select a park"
-
   scenario "visits not created if the dates conflict with the vacation" do
-    # may not need this test if I can adjust the visit date range to
-    # fall within its vacation
     FactoryGirl.create(:park, name: "Grand Tetons")
 
     visit "/"

@@ -35,7 +35,4 @@ feature "users view a page for each park" do
     expect(page).to_not have_link("Directions to #{park_01.name}")
   end
 
-
-  pending "show page lists nearby parks listed"
-
 end

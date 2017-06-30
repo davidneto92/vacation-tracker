@@ -32,9 +32,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # def update
-  # end
-
   def destroy
     @user = User.find(params[:id])
     session[:user_id] = nil
