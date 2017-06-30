@@ -755,7 +755,7 @@ Vacation.create(
 
   Visit.create(
     user_id: 6,
-    vacation_id: 6,
+    vacation_id: 7,
     park_id: 4,
     start_date: Date.new(2016,7,2),
     end_date: Date.new(2016,7,4)
@@ -763,7 +763,7 @@ Vacation.create(
 
   Visit.create(
     user_id: 6,
-    vacation_id: 6,
+    vacation_id: 7,
     park_id: 55,
     start_date: Date.new(2016,7,4),
     end_date: Date.new(2016,7,5)
@@ -771,7 +771,7 @@ Vacation.create(
 
   Visit.create(
     user_id: 6,
-    vacation_id: 6,
+    vacation_id: 7,
     park_id: 57,
     start_date: Date.new(2016,7,6),
     end_date: Date.new(2016,7,10)
@@ -779,7 +779,7 @@ Vacation.create(
 
   Visit.create(
     user_id: 6,
-    vacation_id: 6,
+    vacation_id: 7,
     park_id: 24,
     start_date: Date.new(2016,7,11),
     end_date: Date.new(2016,7,13)
