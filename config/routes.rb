@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'generator/results', to: 'generator#show'
 
 
-  resources :users #, only: [:show, :destroy]
+  resources :users
   resources :users do
     get 'user_visits_download', to: 'users#user_visits_download'
   end
@@ -23,24 +23,10 @@ Rails.application.routes.draw do
     resources :visits, except: [:show, :index]
   end
 
-
-  # api to map a single vacation
   namespace :api do
     namespace :v1 do
       resources :vacations, only: [:index, :show]
-    end
-  end
-
-  # api for all of user's visits
-  namespace :api do
-    namespace :v1 do
       resources :user_visits, only: [:show]
-    end
-  end
-
-  # api for all parks
-  namespace :api do
-    namespace :v1 do
       resources :parks, only: [:index]
     end
   end

@@ -52,8 +52,6 @@ describe "trip generator finds parks along a route" do
       [@park_03, @park_01, @park_02]
     )
 
-    # binding.pry
-
     expect(sorted).to eq [@park_03, @park_02, @park_01]
   end
 end

@@ -1,7 +1,6 @@
 class VisitsController < ApplicationController
   before_action :authorize_sign_in
-  before_action :authorize_management#, only: [:new]
-  # before_action :authorize_edit, only: [:edit, :update, :destroy]
+  before_action :authorize_management
 
   def new
     @vacation = Vacation.find(params[:vacation_id])
@@ -73,11 +72,4 @@ class VisitsController < ApplicationController
       render file: "#{Rails.root}/public/404.html", layout: false, status: 404
     end
   end
-
-  # def authorize_edit
-  #   if !(current_user.vacations.include?(Vacation.find(params[:id])))
-  #     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
-  #   end
-  # end
-
 end

@@ -31,8 +31,6 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'database_cleaner'
 
-  gem 'jasmine'
-
 end
 
 group :production do
