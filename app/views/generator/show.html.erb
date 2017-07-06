@@ -2,7 +2,7 @@
 
   <h3>Generator Results</h3>
 
-  <p> On your trip from <strong><%= @start_point_string %></strong> to <strong><%= @destination.full_name %></strong>,
+  <p> On your trip from <strong><%= @start_point_string %></strong> to <strong><%= @destination_string %></strong>,
     there are <strong><%= "#{@found_parks.length}" %></strong> locations that may be on your way:
   </p>
 
@@ -18,12 +18,12 @@
     <tbody>
 
       <% @found_parks.each_with_index do |park, index| %>
-      <tr>
-        <td><%= @alphabet_string[index + 1] %></td>
-        <td><%= link_to "#{park.full_name}", park_path(park) %></td>
-        <td><%= park.state %></td>
-        <td id="<%= "#{index}_placeholder" %>"></td>
-      </tr>
+        <tr>
+          <td><%= @alphabet_string[index + 1] %></td>
+          <td><%= link_to "#{park.full_name}", park_path(park) %></td>
+          <td><%= park.state %></td>
+          <td id="<%= "#{index}_placeholder" %>"></td>
+        </tr>
       <% end %>
       <tr>
         <td></td>
@@ -31,6 +31,7 @@
         <td><strong>Total</strong></td>
         <td id="<%= "total_placeholder" %>"></td>
       </tr>
+
     </tbody>
   </table>
 

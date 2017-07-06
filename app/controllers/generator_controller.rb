@@ -14,20 +14,21 @@ class GeneratorController < ApplicationController
       redirect_to generator_path
     else
 
-      # if params[:destination_point].empty?
-      #   @destination = Park.find(params[:destination])
-      # else
-      #   @destination = params[:destination_point]
-      # end
+      if params[:destination_point].empty?
+        new_trip = ParkTrip.new(params)
+        @destination_string = new_trip.destination.full_name
+      else
+        new_trip = DestinationTrip.new(params)
+        @destination_string = new_trip.destination
+      end
 
-      new_trip = TripGeneration.new(params)
-      @destination = new_trip.destination
       @start_point_string = new_trip.start_point_name
       @found_parks = new_trip.route_trace
+
+      binding.pry
+
       @directions_link = new_trip.generate_directions_link
-
       @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
       @start_point_json = new_trip.start_point.to_json
       @found_parks_json = (@found_parks << @destination).to_json
     end
