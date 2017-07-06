@@ -1,6 +1,5 @@
-# NOTE: Coordinates format: {"lat" => y, "lng" => x}
 class TripGeneration
-  attr_accessor :destination, :start_point, :found_parks, :directions_data #, :duration
+  attr_accessor :destination, :start_point, :found_parks, :directions_data
 
   def initialize(params)
     @destination = Park.find(params[:destination])
@@ -9,7 +8,6 @@ class TripGeneration
       "address" => @directions_data["routes"].first["legs"].first["start_address"],
       "coords" => @directions_data["routes"].first["legs"].first["start_location"]
     }
-    # @duration = params[:duration].to_i # duration not used yet
     @found_parks = []
   end
 
@@ -20,14 +18,6 @@ class TripGeneration
   def start_point_name
     @start_point["address"]
   end
-
-  # def start_point_state
-  #   start_point_name.split(",")[-2]
-  # end
-  #
-  # def start_point_city
-  #   start_point_name.split(",")[-3]
-  # end
 
   # This method walks through each step of a route to perform a line_scan
   def route_trace
@@ -66,17 +56,13 @@ class TripGeneration
     end
   end
 
-  # This method returns a list of parks that exist within boundary of the
-  # passed in coordinates. Because the United States covers a wide area,
-  # the range differs slightly to give more leeway to longitude.
-  # This translate to a roughly 100-110 mile search radius.
+  # roughly 100-110 mile search area
   def area_check(coords)
     return Park.all.where(drivable: true).select { |park|
       ((coords["lat"] - 1.1)..(coords["lat"] + 1.1)).include?(park.latitude) && (coords["lng"] - 1.2..coords["lng"] + 1.2).include?(park.longitude)
     }
   end
 
-  # This method sorts the found locations by their proximity to the scan point.
   def proximity_sort(scan_coords, results)
     sorted_results = []
     results.each do |park|
@@ -97,7 +83,7 @@ class TripGeneration
     return [rise, run, hypotenuse, slope, y_intercept]
   end
 
-  def directions_link
+  def generate_directions_link
     link = "https://www.google.com/maps/dir/"
     link += "#{URI.encode(self.start_point_name)}/"
     @found_parks.each do |park|
