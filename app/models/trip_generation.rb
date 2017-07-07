@@ -1,4 +1,4 @@
-module TripGeneration
+class TripGeneration
   attr_accessor :destination, :start_point, :found_parks, :directions_data
 
   def start_point_coords
@@ -7,6 +7,10 @@ module TripGeneration
 
   def start_point_name
     @start_point["address"]
+  end
+
+  def destination_coords
+    @directions_data["routes"][0]["legs"][0]["end_location"]
   end
 
   # This method walks through each step of a route to perform a line_scan

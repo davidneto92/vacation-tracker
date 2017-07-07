@@ -1,9 +1,6 @@
-require_relative "generator"
+require_relative "trip_generation"
 
-class ParkTrip
-  include TripGeneration
-
-  attr_accessor :destination, :start_point, :found_parks, :directions_data
+class ParkTrip < TripGeneration
 
   def initialize(params)
     @destination = Park.find(params[:destination])

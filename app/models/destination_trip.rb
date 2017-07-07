@@ -1,7 +1,6 @@
-class DestinationTrip
-  include TripGeneration
+require_relative "trip_generation"
 
-  attr_accessor :destination, :start_point, :found_parks, :directions_data
+class DestinationTrip < TripGeneration
 
   def initialize(params)
     @destination = params[:destination_point]

@@ -16,6 +16,10 @@
       </tr>
     </thead>
     <tbody>
+      <td><%= @alphabet_string.first %></td>
+      <td><%= @start_point_string %></td>
+      <td></td>
+      <td></td>
 
       <% @found_parks.each_with_index do |park, index| %>
         <tr>
@@ -25,6 +29,7 @@
           <td id="<%= "#{index}_placeholder" %>"></td>
         </tr>
       <% end %>
+
       <tr>
         <td></td>
         <td></td>

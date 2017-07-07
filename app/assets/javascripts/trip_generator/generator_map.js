@@ -22,12 +22,9 @@ function initGeneratorMap() {
   $.each(found_parks_json, function (x, park) {
     marker = new google.maps.Marker({
       position: { lat: park.latitude, lng: park.longitude },
-      // map: map, // skipping this prevents an extra marker, reducing clutter
-      label: park.name[0],
       name: park.name,
-      park_type: park.park_type
+      full_name: park.full_name,
     });
-    marker.full_name = marker.name + ' ' + marker.park_type;
     loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
     bounds.extend(loc);
 
