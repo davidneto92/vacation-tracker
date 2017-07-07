@@ -60,8 +60,13 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, markerLi
 
 function calculateAndDisplayDistances(route) {
   var totalDistance = 0;
+  var last_slot = route.legs.length - 1;
   $.each(route.legs, function (x, leg) {
-    distanceDisplay = document.getElementById(x + '_placeholder');
+    if (x == last_slot) {
+      distanceDisplay = document.getElementById('last_placeholder');
+    } else {
+      distanceDisplay = document.getElementById(x + '_placeholder');
+    }
     distanceDisplay.innerHTML += Math.round(leg.distance.value * 0.000621371) + ' mi';
     totalDistance += leg.distance.value;
   });

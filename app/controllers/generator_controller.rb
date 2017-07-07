@@ -17,15 +17,16 @@ class GeneratorController < ApplicationController
       if params[:destination_point].empty?
         new_trip = ParkTrip.new(params)
         @found_parks = new_trip.route_trace
-
         @destination_string = new_trip.destination.full_name
         @found_parks_json = build_found_parks_json(@found_parks << new_trip.destination, new_trip)
+
+        @render_park_table = true
       else
         new_trip = DestinationTrip.new(params)
         @found_parks = new_trip.route_trace
-
         @destination_string = new_trip.destination
         @found_parks_json = build_found_parks_json(@found_parks, new_trip)
+        @destination_data = new_trip.destination_data
       end
 
       @start_point_json = new_trip.start_point.to_json
@@ -33,6 +34,8 @@ class GeneratorController < ApplicationController
       @directions_link = new_trip.generate_directions_link
       @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     end
+
+    # binding.pry
   end
 
   private
@@ -45,14 +48,7 @@ class GeneratorController < ApplicationController
       new_list << park_hash
     end
 
-    if new_trip.class == DestinationTrip
-      new_list << {
-        name: new_trip.destination,
-        full_name: new_trip.destination,
-        latitude: new_trip.destination_coords["lat"],
-        longitude: new_trip.destination_coords["lng"]
-      }
-    end
+    new_list << new_trip.destination_data if new_trip.class == DestinationTrip
 
     return new_list.to_json
   end

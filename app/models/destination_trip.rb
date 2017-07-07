@@ -12,6 +12,15 @@ class DestinationTrip < TripGeneration
     @found_parks = []
   end
 
+  def destination_data
+    {
+      name: @destination,
+      full_name: @destination,
+      latitude: destination_coords["lat"],
+      longitude: destination_coords["lng"]
+    }
+  end
+
   def generate_directions_link
     link = "https://www.google.com/maps/dir/"
     link += "#{URI.encode(self.start_point_name)}/"
