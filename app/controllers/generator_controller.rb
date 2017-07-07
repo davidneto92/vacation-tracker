@@ -19,14 +19,15 @@ class GeneratorController < ApplicationController
         @found_parks = new_trip.route_trace
         @destination_string = new_trip.destination.full_name
         @found_parks_json = build_found_parks_json(@found_parks << new_trip.destination, new_trip)
-
         @render_park_table = true
+
       else
         new_trip = DestinationTrip.new(params)
         @found_parks = new_trip.route_trace
         @destination_string = new_trip.destination
         @found_parks_json = build_found_parks_json(@found_parks, new_trip)
         @destination_data = new_trip.destination_data
+
       end
 
       @start_point_json = new_trip.start_point.to_json
@@ -35,7 +36,6 @@ class GeneratorController < ApplicationController
       @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     end
 
-    # binding.pry
   end
 
   private
