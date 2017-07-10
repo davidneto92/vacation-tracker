@@ -26,7 +26,7 @@ describe "trip generator finds parks along a route via park trip" do
     scan = new_trip.area_check("lat" => 37.437, "lng" => -112.621)
     expect(scan.include?(@park_01)).to eq true
     expect(scan.include?(@park_02)).to eq true
-    expect(scan.include?(@park_05)).to eq false
+    expect(scan.include?(@park_04)).to eq false
   end
 
   it "#line_scan searches along a route to find all matching locations" do
