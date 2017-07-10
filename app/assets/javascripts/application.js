@@ -1,18 +1,15 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-tablesorter
 //= require foundation
 //= require_tree .
 
-//= require jquery.tablesorter.js
-
 $(function(){ $(document).foundation(); });
 
-// $(document).ready(function() {
-//   $('table.tablesorter').tablesorter();
-// });
-//
-// $(document).ready(function()
-//     {
-//         $("#parksTable").tablesorter();
-//     }
-// );
+
+$(document).ready(function()
+  {
+    $.noConflict();
+    $("#parksTable").tablesorter();
+  }
+);
