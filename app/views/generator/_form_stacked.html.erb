@@ -20,9 +20,23 @@
     </div>
 
     <div class="row">
-      <div class="columns small-12">
+      <div id="generator-autocomplete-destination" class="columns small-12">
         <label>Destination
-          <%= select_tag "destination", options_for_select(@park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }) %>
+          <input id="autocomplete-destination" placeholder="Address, city, or state etc" type="text" name="destination_point"></input>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12 text-center">
+        - or -
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12">
+        <label><br>
+          <%= select_tag "destination", options_for_select(@park_list) %>
         </label>
       </div>
     </div>
@@ -42,7 +56,7 @@
   <div class="row">
     <div class="small-12 columns">
       <p>
-        To generate a route, please enter your starting location and then select a park you would like to visit.
+        To generate a route, please enter your starting location and a destination, or you select a park as your destination.
         <br><br>
         Please note that not all of the National Parks are can be driven to, and therefore are omitted from this list.
         To see a list of parks that can and cannot be driven to, please visit the <%= link_to "parks page", parks_path %>.

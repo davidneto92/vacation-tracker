@@ -1,0 +1,40 @@
+<table>
+  <thead>
+    <tr>
+      <th width="15"></th>
+      <th width="500">Position</th>
+      <th width="250">Park Location</th>
+      <th width="250">Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td><%= @alphabet_string.first %></td>
+    <td><i><%= @start_point_string %></i></td>
+    <td></td>
+    <td></td>
+
+    <% @found_parks.each_with_index do |park, index| %>
+      <tr>
+        <td><%= @alphabet_string[index + 1] %></td>
+        <td><%= link_to "#{park.full_name}", park_path(park) %></td>
+        <td><%= park.state %></td>
+        <td id="<%= "#{index}_placeholder" %>"></td>
+      </tr>
+    <% end %>
+
+    <tr>
+      <td><%= @alphabet_string[@found_parks.length + 1] %></td>
+      <td><i><%= @destination_data[:name] %></i></td>
+      <td></td>
+      <td id="last_placeholder"></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td></td>
+      <td><strong>Total</strong></td>
+      <td id="<%= "total_placeholder" %>"></td>
+    </tr>
+
+  </tbody>
+</table>

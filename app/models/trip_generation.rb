@@ -1,17 +1,5 @@
-# NOTE: Coordinates format: {"lat" => y, "lng" => x}
 class TripGeneration
-  attr_accessor :destination, :start_point, :found_parks, :directions_data #, :duration
-
-  def initialize(params)
-    @destination = Park.find(params[:destination])
-    @directions_data = parse_directions(params[:start_point])
-    @start_point = {
-      "address" => @directions_data["routes"].first["legs"].first["start_address"],
-      "coords" => @directions_data["routes"].first["legs"].first["start_location"]
-    }
-    # @duration = params[:duration].to_i # duration not used yet
-    @found_parks = []
-  end
+  attr_accessor :destination, :start_point, :found_parks, :directions_data
 
   def start_point_coords
     @start_point["coords"]
@@ -21,13 +9,9 @@ class TripGeneration
     @start_point["address"]
   end
 
-  # def start_point_state
-  #   start_point_name.split(",")[-2]
-  # end
-  #
-  # def start_point_city
-  #   start_point_name.split(",")[-3]
-  # end
+  def destination_coords
+    @directions_data["routes"][0]["legs"][0]["end_location"]
+  end
 
   # This method walks through each step of a route to perform a line_scan
   def route_trace
@@ -39,7 +23,7 @@ class TripGeneration
         {"lat" => (step["end_location"]["lat"]), "lng" => (step["end_location"]["lng"])}
       )
     end
-    @found_parks.delete(@destination)
+    @found_parks.delete(@destination) if @destination.class == Park
     return @found_parks
   end
 
@@ -66,17 +50,13 @@ class TripGeneration
     end
   end
 
-  # This method returns a list of parks that exist within boundary of the
-  # passed in coordinates. Because the United States covers a wide area,
-  # the range differs slightly to give more leeway to longitude.
-  # This translate to a roughly 100-110 mile search radius.
+  # roughly 100-110 mile search area
   def area_check(coords)
     return Park.all.where(drivable: true).select { |park|
       ((coords["lat"] - 1.1)..(coords["lat"] + 1.1)).include?(park.latitude) && (coords["lng"] - 1.2..coords["lng"] + 1.2).include?(park.longitude)
     }
   end
 
-  # This method sorts the found locations by their proximity to the scan point.
   def proximity_sort(scan_coords, results)
     sorted_results = []
     results.each do |park|
@@ -95,22 +75,6 @@ class TripGeneration
     slope       = (rise / run)
     y_intercept = ( start_coords["lat"] - (start_coords["lng"] * slope) )
     return [rise, run, hypotenuse, slope, y_intercept]
-  end
-
-  def directions_link
-    link = "https://www.google.com/maps/dir/"
-    link += "#{URI.encode(self.start_point_name)}/"
-    @found_parks.each do |park|
-      link += "#{URI.encode(park.full_name)}/"
-    end
-    link += "#{URI.encode(@destination.full_name)}"
-    return link
-  end
-
-  private
-
-  def parse_directions(start_point)
-    JSON.parse(RestClient.get("https://maps.googleapis.com/maps/api/directions/json?units=imperial&origin=#{ URI.encode(start_point) }&destination=#{ URI.encode(@destination.full_name) }4&key=#{ ENV["GOOGLE_DIRECTIONS_KEY"] }"))
   end
 
 end

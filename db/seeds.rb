@@ -737,10 +737,10 @@ Vacation.create(
 
   Visit.create(
     user_id: 5,
-    vacation_id: 5,
-    park_id: 40,
-    start_date: Date.new(2017,4,12),
-    end_date: Date.new(2017,4,16)
+    vacation_id: 6,
+    park_id: 34,
+    start_date: Date.new(2016,6,20),
+    end_date: Date.new(2016,6,24)
   )
 
 Vacation.create(

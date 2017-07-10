@@ -22,12 +22,9 @@ function initGeneratorMap() {
   $.each(found_parks_json, function (x, park) {
     marker = new google.maps.Marker({
       position: { lat: park.latitude, lng: park.longitude },
-      // map: map, // skipping this prevents an extra marker, reducing clutter
-      label: park.name[0],
       name: park.name,
-      park_type: park.park_type
+      full_name: park.full_name,
     });
-    marker.full_name = marker.name + ' ' + marker.park_type;
     loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
     bounds.extend(loc);
 
@@ -63,8 +60,13 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, markerLi
 
 function calculateAndDisplayDistances(route) {
   var totalDistance = 0;
+  var last_slot = route.legs.length - 1;
   $.each(route.legs, function (x, leg) {
-    distanceDisplay = document.getElementById(x + '_placeholder');
+    if (x == last_slot) {
+      distanceDisplay = document.getElementById('last_placeholder');
+    } else {
+      distanceDisplay = document.getElementById(x + '_placeholder');
+    }
     distanceDisplay.innerHTML += Math.round(leg.distance.value * 0.000621371) + ' mi';
     totalDistance += leg.distance.value;
   });
