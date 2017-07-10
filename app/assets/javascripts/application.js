@@ -11,5 +11,6 @@ $(document).ready(function()
   {
     $.noConflict();
     $("#parksTable").tablesorter();
+    $("#vacationsTable").tablesorter();
   }
 );
