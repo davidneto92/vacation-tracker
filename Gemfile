@@ -12,7 +12,6 @@ gem 'foundation-rails'
 gem 'active_model_serializers'
 gem 'rest-client'
 gem 'aws-sdk', '~> 2.9'
-
 gem 'jquery-tablesorter'
 
 group :development do

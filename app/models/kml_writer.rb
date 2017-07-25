@@ -1,5 +1,3 @@
-require 'tempfile'
-
 class KmlWriter
   FULL_MAP_START = File.open("kml_templates/01_boiler_start.xml", "r").read
   FULL_MAP_END   = File.open("kml_templates/02_boiler_end.xml", "r").read
