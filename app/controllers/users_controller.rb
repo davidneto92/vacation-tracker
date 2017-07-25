@@ -49,6 +49,7 @@ class UsersController < ApplicationController
       else
         map_data = UserVisitsSerializer.perform(@user)
         print_data = KmlWriter.write_kml(map_data, @user.uid)
+        # binding.pry
         MapUploader.perform(print_data)
         @download_path = "https://s3.amazonaws.com/vacation-tracker/Visited_Parks_#{CURRENT_DATE}_#{@user.uid}.kml"
       end
