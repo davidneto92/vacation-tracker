@@ -1,19 +1,9 @@
 class Park < ApplicationRecord
   has_many :visits
-
   has_many :vacations, through: :visits
   has_many :users, through: :visits
 
-
   validates :park_type, inclusion: { in: ["National Park", "National Monument"] }
-
-  def state_abbreviation
-    return Park::ABBREVIATIONS[ Park::STATES.index(self.state) ]
-  end
-
-  def full_name
-    "#{self.name} #{self.park_type}"
-  end
 
   STATES = [
     "Alabama",
@@ -67,7 +57,7 @@ class Park < ApplicationRecord
     "Wisconsin",
     "Wyoming",
     "US Territories",
-  ]
+  ].freeze
 
   ABBREVIATIONS = [
     "AL",
@@ -121,6 +111,18 @@ class Park < ApplicationRecord
     "WI",
     "WY",
     "USA",
-  ]
+].freeze
 
+  def state_abbreviation
+    return Park::ABBREVIATIONS[ Park::STATES.index(self.state) ]
+  end
+
+  def full_name
+    "#{self.name} #{self.park_type}"
+  end
+
+  def self.drivable_park_list
+    park_list = Park.all.where(drivable: true).order(:name)
+    park_list = park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }
+  end
 end

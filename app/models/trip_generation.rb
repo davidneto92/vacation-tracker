@@ -1,5 +1,5 @@
 class TripGeneration
-  attr_accessor :destination, :start_point, :found_parks, :directions_data
+  attr_accessor :start_point, :destination, :found_parks, :directions_data
 
   def start_point_coords
     @start_point["coords"]
@@ -76,5 +76,4 @@ class TripGeneration
     y_intercept = ( start_coords["lat"] - (start_coords["lng"] * slope) )
     return [rise, run, hypotenuse, slope, y_intercept]
   end
-
 end
