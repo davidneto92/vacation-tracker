@@ -1,6 +1,6 @@
 class CreateSavedTrips < ActiveRecord::Migration[5.1]
   def change
-    create_table :savedtrips do |t|
+    create_table :saved_trips do |t| # change to snake_case
       t.jsonb :start_point, null: false
       t.string :destination_name, null: false
       t.integer :destination_park_id      

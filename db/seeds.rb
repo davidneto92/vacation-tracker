@@ -784,3 +784,7 @@ Vacation.create(
     start_date: Date.new(2016,7,11),
     end_date: Date.new(2016,7,13)
   )
+
+puts "#{Park.count} parks added."
+puts "#{Vacation.count} vacations added."
+puts "#{Visit.count} visits added."
