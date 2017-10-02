@@ -1,6 +1,6 @@
 require "rails_helper"
 
-# currently disabled to prevent errors while attempting to stub tests
+# do I need a feature test?
 
 # describe "trip generator page displays correct results" do
 #     let!(:park_01) { FactoryGirl.create(:park, name: "Big Bend", latitude: 29.128, longitude: -103.243) }

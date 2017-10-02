@@ -9,7 +9,7 @@ class ParkTrip < TripGeneration
       "address" => @directions_data["routes"].first["legs"].first["start_address"],
       "coords" => @directions_data["routes"].first["legs"].first["start_location"]
     }
-    @found_parks = []
+    @found_parks = []    
   end
 
   def generate_directions_link
@@ -27,5 +27,4 @@ class ParkTrip < TripGeneration
   def parse_directions(start_point)
     JSON.parse(RestClient.get("https://maps.googleapis.com/maps/api/directions/json?units=imperial&origin=#{ URI.encode(start_point) }&destination=#{ URI.encode(@destination.full_name) }4&key=#{ ENV["GOOGLE_DIRECTIONS_KEY"] }"))
   end
-
 end

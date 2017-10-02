@@ -16,8 +16,8 @@ class DestinationTrip < TripGeneration
     {
       name: @destination,
       full_name: @destination,
-      latitude: destination_coords["lat"],
-      longitude: destination_coords["lng"]
+      lat: destination_coords["lat"],
+      lng: destination_coords["lng"]
     }
   end
 

@@ -30,7 +30,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'valid_attribute'
-  # gem 'webmock'
 end
 
 group :production do
