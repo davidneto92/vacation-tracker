@@ -43,4 +43,6 @@ describe "trip generator finds parks along a route via park trip" do
 
     expect(sorted).to eq [park_01, park_02, park_03]
   end
+
+  pending "error handling for ParkTrip"
 end

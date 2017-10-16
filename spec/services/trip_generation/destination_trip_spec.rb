@@ -18,4 +18,6 @@ describe "trip generator finds parks along a route via destination trip" do
     expect(destination_trip.destination_data[:lat]).to be_within(0.1).of(38.57)
     expect(destination_trip.destination_data[:lng]).to be_within(0.1).of(-109.55)
   end
+
+  pending "error handling for DestinationTrip"
 end

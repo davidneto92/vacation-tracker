@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908222501) do
+ActiveRecord::Schema.define(version: 20171016152058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,17 @@ ActiveRecord::Schema.define(version: 20170908222501) do
     t.boolean "drivable", default: true
   end
 
-  create_table "savedtrips", force: :cascade do |t|
-    t.string "start_point", null: false
+  create_table "saved_trips", force: :cascade do |t|
+    t.jsonb "start_point", null: false
     t.string "destination_name", null: false
     t.integer "destination_park_id"
-    t.integer "found_parks", null: false, array: true
-    t.text "directions_data", null: false
+    t.integer "found_parks", array: true
+    t.jsonb "directions_data", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_savedtrips_on_user_id"
+    t.string "trip_name", null: false
+    t.index ["user_id"], name: "index_saved_trips_on_user_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -75,7 +76,7 @@ ActiveRecord::Schema.define(version: 20170908222501) do
     t.index ["vacation_id"], name: "index_visits_on_vacation_id"
   end
 
-  add_foreign_key "savedtrips", "users"
+  add_foreign_key "saved_trips", "users"
   add_foreign_key "vacations", "users"
   add_foreign_key "visits", "parks"
   add_foreign_key "visits", "users"
