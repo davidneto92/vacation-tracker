@@ -25,4 +25,9 @@ class TripSaver
       user_id: user.id
     )
   end
+
+  def self.pass_trip_data(trip)
+    # this method may be needed to encode a trip object so that
+    # it may be passed into the SavedTrips controller to be persisted to the database
+  end
 end

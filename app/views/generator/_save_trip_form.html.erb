@@ -1,0 +1,7 @@
+<%= form_tag("/saved_trips", method: :post) do %>
+  <%# Will need all data for the trip to be passed to the SavedTrips controller. %>
+  <%# Once the params are passed to the controller, they are then sent to %>
+  <%# the trip saver service which will parse the data and create the objects. %>
+  <%= hidden_field_tag(:passed_in_data, @test_data) %>
+  <%= submit_tag("Save this trip", class: "button") %>
+<% end %>

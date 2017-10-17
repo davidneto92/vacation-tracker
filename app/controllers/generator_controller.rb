@@ -30,9 +30,10 @@ class GeneratorController < ApplicationController
       @start_point_json = new_trip.start_point.to_json
       @start_point_string = new_trip.start_point_name
       @directions_link = new_trip.generate_directions_link
-      @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"      
     end
 
+    @test_data = {'a': 1, 'b': 2}.to_json
   end
 
   private
