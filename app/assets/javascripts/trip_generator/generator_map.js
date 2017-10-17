@@ -63,7 +63,7 @@ function calculateAndDisplayDistances(route) {
   var last_slot = route.legs.length - 1;
   $.each(route.legs, function (x, leg) {
     if (x == last_slot) {
-      distanceDisplay = document.getElementById('last_placeholder');
+      distanceDisplay = document.getElementById(last_slot + '_placeholder');
     } else {
       distanceDisplay = document.getElementById(x + '_placeholder');
     }

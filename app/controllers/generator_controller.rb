@@ -27,7 +27,7 @@ class GeneratorController < ApplicationController
         @destination_string = new_trip.destination
         @found_parks_json = build_found_parks_json(@found_parks, new_trip)
         @destination_data = new_trip.destination_data
-
+        
       end
 
       @start_point_json = new_trip.start_point.to_json
