@@ -10,7 +10,7 @@ class TripSaver
       destination_park_id: park_trip.destination.id,
       found_parks: park_trip.found_parks,
       directions_data: park_trip.directions_data,
-      trip_name: generate_name(park_trip.start_point["address"], park_trip.destination.full_name),
+      trip_name: generate_name(park_trip.start_point['address'], park_trip.destination.full_name),
       user_id: user.id
     )
   end
@@ -21,13 +21,27 @@ class TripSaver
       destination_name: destination_trip.destination,
       found_parks: destination_trip.found_parks,
       directions_data: destination_trip.directions_data,
-      trip_name: generate_name(destination_trip.start_point["address"], destination_trip.destination),
+      trip_name: generate_name(destination_trip.start_point['address'], destination_trip.destination),
       user_id: user.id
     )
   end
 
-  def self.pass_trip_data(trip)
-    # this method may be needed to encode a trip object so that
-    # it may be passed into the SavedTrips controller to be persisted to the database
+  # start with park trip
+  def self.parse_trip_data(params, user)
+    trip_to_save = SavedTrip.new(
+      start_point: JSON.parse(params['start_point']),
+      destination_name: params['destination_name'],
+      found_parks: params['found_parks_list'].split(' ').map{ |id| id.to_i },
+      directions_data: JSON.parse(params['directions_data']),
+      user_id: user.id
+    )
+    trip_to_save.trip_name = generate_name(trip_to_save.start_point['address'], trip_to_save.destination_name)
+
+    if params['trip_type'] == 'park'
+      trip_to_save.destination_park_id = params['destination_id'].to_i
+    end
+
+    trip_to_save.save
+    trip_to_save
   end
 end

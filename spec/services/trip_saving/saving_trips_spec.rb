@@ -12,6 +12,7 @@ describe "ParkTrips and DestinationTrips can be saved" do
     let!(:park_trip) { ParkTrip.new(params) }
 
     it "converts to a SavedTrip" do
+      park_trip.route_trace
       saved_trip = TripSaver.save_park_trip(park_trip, new_user)
       
       expect(saved_trip.user).to eq new_user
