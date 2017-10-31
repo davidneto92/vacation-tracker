@@ -26,7 +26,6 @@ class TripSaver
     )
   end
 
-  # start with park trip
   def self.parse_trip_data(params, user)
     trip_to_save = SavedTrip.new(
       start_point: JSON.parse(params['start_point']),
