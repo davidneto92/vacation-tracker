@@ -15,9 +15,9 @@ describe "KmlWriter generates full contents of .kml" do
   it "generates a .kml file for the supplied park list" do
     path = KmlWriter.write_kml(@map_data, @user.uid)
 
-    expect( path[0].include?("<?xml version=\"1.0\" encoding=\"UTF-8\"?>") ).to eq true
-    expect( path[0].include?("<description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm<br>Last visited on May  8, 2016]]></description>\n") ).to eq true
-    expect( path[0].include?("<description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm]]></description>\n") ).to eq true
+    expect(path[0].include?("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")).to eq true
+    expect(path[0].include?("<description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm<br>Last visited on May  8, 2016]]></description>\n")).to eq true
+    expect(path[0].include?("<description><![CDATA[Official NPS Site:<br>https://www.nps.gov/acad/index.htm]]></description>\n")).to eq true
   end
 
 end

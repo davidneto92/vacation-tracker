@@ -25,7 +25,9 @@ class UsersController < ApplicationController
     else
       @download_path = "https://s3.amazonaws.com/vacation-tracker/blank_map_all_visits.kml"
     end
-
+    
+    # @saved_trips = User.saved_trips
+    
   end
 
   def edit
@@ -49,7 +51,6 @@ class UsersController < ApplicationController
       else
         map_data = UserVisitsSerializer.perform(@user)
         print_data = KmlWriter.write_kml(map_data, @user.uid)
-        # binding.pry
         MapUploader.perform(print_data)
         @download_path = "https://s3.amazonaws.com/vacation-tracker/Visited_Parks_#{CURRENT_DATE}_#{@user.uid}.kml"
       end

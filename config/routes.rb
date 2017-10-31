@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'generator', to: 'generator#index'
   get 'generator/results', to: 'generator#show'
 
-
   resources :users
   resources :users do
     get 'user_visits_download', to: 'users#user_visits_download'
@@ -22,6 +21,8 @@ Rails.application.routes.draw do
   resources :vacations do
     resources :visits, except: [:show, :index]
   end
+
+  resources :saved_trips
 
   namespace :api do
     namespace :v1 do

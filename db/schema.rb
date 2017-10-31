@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615171041) do
+ActiveRecord::Schema.define(version: 20171016152058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20170615171041) do
     t.float "longitude"
     t.string "nps_url"
     t.boolean "drivable", default: true
+  end
+
+  create_table "saved_trips", force: :cascade do |t|
+    t.jsonb "start_point", null: false
+    t.string "destination_name", null: false
+    t.integer "destination_park_id"
+    t.integer "found_parks", array: true
+    t.jsonb "directions_data", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "trip_name", null: false
+    t.index ["user_id"], name: "index_saved_trips_on_user_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -63,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170615171041) do
     t.index ["vacation_id"], name: "index_visits_on_vacation_id"
   end
 
+  add_foreign_key "saved_trips", "users"
   add_foreign_key "vacations", "users"
   add_foreign_key "visits", "parks"
   add_foreign_key "visits", "users"

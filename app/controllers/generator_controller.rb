@@ -1,7 +1,6 @@
 class GeneratorController < ApplicationController
   def index
-    @park_list = Park.all.where(drivable: true).order(:name)
-    @park_list = @park_list.collect{ |park| ["#{park.full_name} - #{park.state_abbreviation}", park.id] }
+    @park_list = Park.drivable_park_list
     @park_list.insert(0,["Select a park...", 0])
   end
 
@@ -20,22 +19,25 @@ class GeneratorController < ApplicationController
         @destination_string = new_trip.destination.full_name
         @found_parks_json = build_found_parks_json(@found_parks << new_trip.destination, new_trip)
         @render_park_table = true
-
+        @destination_id = new_trip.destination.id
+        @trip_type = 'park'
       else
         new_trip = DestinationTrip.new(params)
         @found_parks = new_trip.route_trace
         @destination_string = new_trip.destination
         @found_parks_json = build_found_parks_json(@found_parks, new_trip)
         @destination_data = new_trip.destination_data
-        
       end
 
       @start_point_json = new_trip.start_point.to_json
       @start_point_string = new_trip.start_point_name
       @directions_link = new_trip.generate_directions_link
       @alphabet_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    end
 
+      #used for saving trips:
+      @found_parks_list = @found_parks.map { |park| park.id }
+      @directions_data = new_trip.directions_data.to_json
+    end
   end
 
   private
@@ -52,5 +54,4 @@ class GeneratorController < ApplicationController
 
     return new_list.to_json
   end
-
 end
